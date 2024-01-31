@@ -1,0 +1,25 @@
+1) startup.o 
+    t end
+    U main
+    U stack_top
+    T yehia
+
+2) uart.o 
+    T UART_Send_String
+
+3) app.o 
+    T main
+    D message
+    C message2
+    R message3
+    U UART_Send_String
+
+4) app.elf
+    00010008 t end
+    00010010 T main
+    000100ec D message
+    00010150 B message2
+    00010088 R message3
+    000111b4 B stack_top
+    00010034 T UART_Send_String
+    00010000 T yehia
