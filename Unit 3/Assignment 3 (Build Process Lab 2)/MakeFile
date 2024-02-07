@@ -1,0 +1,30 @@
+CC=arm-none-eabi-
+CFLAGS= -mcpu=arm926ej-s -g
+PROJ =led_toggle
+MAP=map_File.map
+LIBS=
+
+C_SRC = $(wildcard *.c)
+C_OBJ = $(C_SRC:.c=.o) #Turn all .c to .o
+
+S_SRC = $(wildcard *.s)
+S_OBJ = $(S_SRC:.s=.o) #Turn all .s to .o
+
+all: $(PROJ).bin
+
+%.o : %.s 
+	$(CC)as $(CFLAGS) $< -o $@
+
+%.o : %.c 
+	$(CC)gcc $(CFLAGS) -c $< -o $@
+
+$(PROJ).elf: $(C_OBJ) $(S_OBJ)
+	$(CC)ld -T linker.ld $(LIBS) $(C_OBJ) $(S_OBJ) -o $@ -Map=$(MAP)
+
+
+$(PROJ).bin: $(PROJ).elf
+	$(CC)objcopy -O binary $< $@
+
+clean_all:
+	rm -rf *.o *.bin *.elf $(MAP)
+
