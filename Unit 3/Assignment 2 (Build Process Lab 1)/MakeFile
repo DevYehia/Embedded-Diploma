@@ -10,7 +10,7 @@ C_OBJ = $(C_SRC:.c=.o) #Turn all .c to .o
 S_SRC = $(wildcard *.s)
 S_OBJ = $(S_SRC:.s=.o) #Turn all .s to .o
 
-all: learn.bin
+all: $(PROJ).bin
 
 %.o : %.s 
 	$(CC)as $(CFLAGS) $< -o $@
@@ -26,5 +26,5 @@ $(PROJ).bin: $(PROJ).elf
 	$(CC)objcopy -O binary $< $@
 
 clean_all:
-	rm -rf *.o *.bin *.elf $(MAP)
+	rm -rf *.o *.bin *.hex *.elf $(MAP)
 

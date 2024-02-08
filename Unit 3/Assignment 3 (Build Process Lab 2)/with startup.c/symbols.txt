@@ -1,0 +1,43 @@
+startup.o:
+    W busFaultHandler
+    T defaultHandler
+    U E_BSS
+    U E_DATA
+    U E_TEXT
+    W hardFaultHandler   (W means weak symbol)
+    U main
+    W MMFaultHandler
+    W NMIHandler
+    T resetHandler
+    U S_BSS
+    U S_DATA
+    U stack_top
+    W usageFaultHandler
+    D vectors
+
+main.o:
+    D g_vars
+    R g_vars2
+    C g_vars3
+    T main
+
+led_toggle.elf:
+080000a4 W busFaultHandler (same as defaultHandler's address (alias))
+080000a4 T defaultHandler
+20000007 B E_BSS
+20000003 D E_DATA
+08000137 T E_TEXT
+20000000 D g_vars
+08000134 T g_vars2
+20000004 B g_vars3
+080000a4 W hardFaultHandler (same as defaultHandler's address (alias))
+0800001c T main
+080000a4 W MMFaultHandler (same as defaultHandler's address (alias))
+080000a4 W NMIHandler (same as defaultHandler's address (alias))
+080000b0 T resetHandler
+20000004 B S_BSS
+20000000 D S_DATA
+20001008 B stack_top
+080000a4 W usageFaultHandler (same as defaultHandler's address (alias))
+08000000 T vectors
+

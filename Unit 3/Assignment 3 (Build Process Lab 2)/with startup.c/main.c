@@ -29,9 +29,9 @@ typedef union {
     } Pin;
 
 } R_ODR_t;
-uint8 g_vars[3] = {1,2,3};
-uint8 const g_vars2[3] = {1,2,3};
-uint8 g_vars3[3];
+uint8 g_vars[3] = {1,2,3}; //in .data
+uint8 const g_vars2[3] = {1,2,3};// in .rodata
+uint8 g_vars3[3];// in .bss
 void main(void){
     SET_BIT(RCC_ABP2ENR,RCC_IOPAEN);
     GPIOA_CRH &= 0xFF0FFFFF;

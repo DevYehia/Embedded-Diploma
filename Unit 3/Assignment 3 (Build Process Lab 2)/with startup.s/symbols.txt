@@ -1,0 +1,12 @@
+startup.o:
+    T _reset
+    t default_handler
+    U main
+
+main.o:
+    T main
+
+led_toggle.elf:
+    080000c4 T _reset
+    080000ca t default_handler
+    0800003c T main
