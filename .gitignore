@@ -1,5 +1,2 @@
 Build
-*.o
-*.elf
-*.hex
-*.bin
+.vscode
