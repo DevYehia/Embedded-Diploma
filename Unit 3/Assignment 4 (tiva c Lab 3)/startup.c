@@ -1,14 +1,15 @@
 //By Prof. Yehia
 #include "types.h"
 
-#define STACK_TOP   0x20001000
 //symbols from linker script
-extern uint32 stack_top;
 extern uint32 E_TEXT;
 extern uint32 S_DATA;
 extern uint32 E_DATA;
 extern uint32 S_BSS;
 extern uint32 E_BSS;
+
+//reserve 1KB for the stack in .bss section
+static uint32 stackTop[256];
 
 extern void main(void);
 
@@ -46,14 +47,14 @@ void busFaultHandler(void) __attribute__ ((weak,alias("defaultHandler")));
 
 void usageFaultHandler(void) __attribute__ ((weak,alias("defaultHandler")));
 
-uint32 vectors[] __attribute__((section(".vectors"))) = {
-    (uint32) &stack_top,
-    (uint32) &resetHandler,
-    (uint32) &NMIHandler,
-    (uint32) &hardFaultHandler,
-    (uint32) &MMFaultHandler,
-    (uint32) &busFaultHandler,
-    (uint32) &usageFaultHandler
+void (* vectors[])() __attribute__((section(".vectors"))) = {
+    (void (*)())(stackTop + sizeof(stackTop)),
+    &resetHandler,
+    &NMIHandler,
+    &hardFaultHandler,
+    &MMFaultHandler,
+    &busFaultHandler,
+    &usageFaultHandler
 };
 
 

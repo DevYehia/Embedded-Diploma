@@ -1,6 +1,6 @@
 
 MEMORY{
-    flash(RX) : ORIGIN = 0x08000000, LENGTH = 128K
+    flash(RX) : ORIGIN = 0x00000000, LENGTH = 128K
     sram(RWX) : ORIGIN = 0x20000000, LENGTH = 20K
 }
 
@@ -14,17 +14,14 @@ SECTIONS{
     .data :{
         S_DATA = .;
         *(.data)
-        E_DATA = .;
         . = ALIGN(4);
+        E_DATA = .;
     }> sram AT> flash
     .bss :{
         S_BSS = .;
         *(.bss)
         *(COMMON)
         E_BSS = .;
-        . = ALIGN(4);
-        . = . + 0x1000;
-        stack_top = .;
     }> sram
 
 }

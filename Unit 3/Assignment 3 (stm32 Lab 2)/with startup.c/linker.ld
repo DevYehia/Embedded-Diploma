@@ -14,8 +14,8 @@ SECTIONS{
     .data :{
         S_DATA = .;
         *(.data)
-        E_DATA = .;
         . = ALIGN(4);
+        E_DATA = .;
     }> sram AT> flash
     .bss :{
         S_BSS = .;

@@ -1,6 +1,6 @@
 CC=arm-none-eabi-
-CFLAGS= -mcpu=cortex-m3 -gdwarf-2
-PROJ =led_toggle
+CFLAGS= -mcpu=cortex-m4 -gdwarf-2 -g
+PROJ =led_toggle_cortexM4
 MAP=map_File.map
 LIBS=
 
@@ -20,10 +20,12 @@ all: $(PROJ).hex
 
 $(PROJ).elf: $(C_OBJ) $(S_OBJ)
 	$(CC)ld -T linker.ld $(LIBS) $(C_OBJ) $(S_OBJ) -o $@ -Map=$(MAP)
+	cp $@ $(PROJ).axf
 
 
 $(PROJ).hex: $(PROJ).elf
 	$(CC)objcopy -O binary $< $@
+
 
 clean_all:
 	rm -rf *.o *.hex *.bin *.elf $(MAP)

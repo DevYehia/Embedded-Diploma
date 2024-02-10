@@ -1,0 +1,36 @@
+main.o:
+    T main   
+
+startup.o:
+    W busFaultHandler
+    T defaultHandler
+    U E_BSS
+    U E_DATA
+    U E_TEXT
+    W hardFaultHandler
+    U main
+    W MMFaultHandler
+    W NMIHandler
+    T resetHandler
+    U S_BSS
+    U S_DATA
+    b stackTop (now stack top is on bss not unknown before linking)
+    W usageFaultHandler
+    D vectors
+
+led_toggle_cortexM4.elf:
+    000000bc W busFaultHandler
+    000000bc T defaultHandler
+    20000400 B E_BSS
+    20000000 D E_DATA
+    0000014c T E_TEXT
+    000000bc W hardFaultHandler
+    0000001c T main
+    000000bc W MMFaultHandler
+    000000bc W NMIHandler
+    000000c8 T resetHandler
+    20000000 B S_BSS
+    20000000 D S_DATA
+    20000000 b stackTop
+    000000bc W usageFaultHandler
+    00000000 T vectors
