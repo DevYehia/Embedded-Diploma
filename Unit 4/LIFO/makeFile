@@ -1,0 +1,19 @@
+CC=
+CFLAGS=
+PROJ =LIFO
+LIBS=
+
+C_SRC = $(wildcard *.c)
+C_OBJ = $(C_SRC:.c=.o) #Turn all .c to .o
+
+S_SRC = $(wildcard *.s)
+S_OBJ = $(S_SRC:.s=.o) #Turn all .s to .o
+
+all: $(PROJ).exe
+
+$(PROJ).exe: $(C_SRC) $(S_SRC)
+	$(CC)gcc $(C_SRC) $(S_SRC) -o Build/$@
+
+clean_all:
+	rm -rf Build/*.o Build/*.exe
+

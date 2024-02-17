@@ -18,9 +18,9 @@ int main(void){
     CLR_BIT(GPIO_PORTF_DATA_R, 3); //led is OFF
     while(1){
         TOGGLE_BIT(GPIO_PORTF_DATA_R, 3);
-        for(delay = 0 ; delay < 20000; delay++);
+        for(delay = 0 ; delay < 200000; delay++);
         TOGGLE_BIT(GPIO_PORTF_DATA_R, 3);
-        for(delay = 0 ; delay < 20000; delay++);        
+        for(delay = 0 ; delay < 200000; delay++);        
     }
     return 0;
 }
