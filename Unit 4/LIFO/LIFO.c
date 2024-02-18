@@ -49,6 +49,7 @@ LIFO_status LIFO_top(LIFO_Buf* stack, element_type *item){
         return LIFO_empty;
     }
     *item = *(stack->head) - 1;    
+    return LIFO_no_error;
 }
 
 LIFO_status LIFO_push(LIFO_Buf* stack, element_type item){
@@ -60,7 +61,8 @@ LIFO_status LIFO_push(LIFO_Buf* stack, element_type item){
     }
     *(stack->head) = item;
     stack->head++;
-    stack->count++;    
+    stack->count++;
+    return LIFO_no_error;    
 }
 
 LIFO_status LIFO_pop(LIFO_Buf* stack, element_type *item){
@@ -72,7 +74,8 @@ LIFO_status LIFO_pop(LIFO_Buf* stack, element_type *item){
     }
     stack->head--;
     *item = *(stack->head);
-    stack->count--;    
+    stack->count--;
+    return LIFO_no_error;    
 }
 
 void LIFO_print_info(LIFO_Buf* stack){
