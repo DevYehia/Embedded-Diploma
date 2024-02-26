@@ -7,7 +7,7 @@ int main(){
     char temp[40];
     printf("Welcome to your student management system\n");
     while(1){
-        printf("Choose:\n");
+        printf("\nChoose:\n");
         printf("1 ---> Add Student\n");
         printf("2 ---> Delete Student\n");
         printf("3 ---> View All Students\n");
