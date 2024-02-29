@@ -1,0 +1,33 @@
+CC=arm-none-eabi-
+CFLAGS= -mcpu=cortex-m3 -gdwarf-2
+PROJ =PressureCTRL
+MAP=map_File.map
+LIBS=
+
+C_SRC = $(wildcard *.c */*.c)            #get all c files in this directory and in any subdirectory
+C_SRC_NODIR = $(notdir $(C_SRC))         #get the file part for files in subdirectories Example a/b.c ---> b.c
+C_OBJ_NODIR = $(C_SRC_NODIR:.c=.o)       #Turn all .c to .o
+C_OBJ = $(addprefix Build/,$(C_OBJ_NODIR)) 
+
+
+S_SRC = $(wildcard *.s)
+S_OBJ = $($(addprefix Build/, $(S_SRC:.s=.o))) #Turn all .s to .o
+
+all: $(PROJ).hex
+
+Build/%.o : */%.c 
+	$(CC)gcc $(CFLAGS) -c $< -o $@
+
+Build/%.o : %.c 
+	$(CC)gcc $(CFLAGS) -c $< -o $@
+
+$(PROJ).elf: $(C_OBJ) $(S_OBJ)
+	$(CC)ld -T linker.ld $(LIBS) $(C_OBJ) $(S_OBJ) -o $@ -Map=$(MAP)
+
+
+$(PROJ).hex: $(PROJ).elf
+	$(CC)objcopy -O binary $< $@
+
+clean_all:
+	rm -rf Build/*.o Build/*.hex Build/*.bin Build/*.elf $(MAP)
+
