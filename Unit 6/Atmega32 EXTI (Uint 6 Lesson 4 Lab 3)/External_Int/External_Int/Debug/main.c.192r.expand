@@ -1,0 +1,1950 @@
+
+;; Function EXTI_init (EXTI_init, funcdef_no=21, decl_uid=1943, cgraph_uid=21, symbol_order=21)
+
+EXTI_init ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _5;
+  unsigned char _6;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _11;
+  unsigned char _12;
+  unsigned char _14;
+  unsigned char _15;
+  unsigned char _17;
+  unsigned char _18;
+  unsigned char _20;
+  unsigned char _21;
+  unsigned char _23;
+  unsigned char _24;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)85B];
+  _3 = _2 | 4;
+  MEM[(volatile unsigned char *)85B] ={v} _3;
+  _5 ={v} MEM[(volatile unsigned char *)85B];
+  _6 = _5 | 8;
+  MEM[(volatile unsigned char *)85B] ={v} _6;
+  _8 ={v} MEM[(volatile unsigned char *)85B];
+  _9 = _8 | 1;
+  MEM[(volatile unsigned char *)85B] ={v} _9;
+  _11 ={v} MEM[(volatile unsigned char *)84B];
+  _12 = _11 & 191;
+  MEM[(volatile unsigned char *)84B] ={v} _12;
+  _14 ={v} MEM[(volatile unsigned char *)91B];
+  _15 = _14 | 128;
+  MEM[(volatile unsigned char *)91B] ={v} _15;
+  _17 ={v} MEM[(volatile unsigned char *)91B];
+  _18 = _17 | 64;
+  MEM[(volatile unsigned char *)91B] ={v} _18;
+  _20 ={v} MEM[(volatile unsigned char *)91B];
+  _21 = _20 | 32;
+  MEM[(volatile unsigned char *)91B] ={v} _21;
+  _23 ={v} MEM[(volatile unsigned char *)95B];
+  _24 = _23 | 128;
+  MEM[(volatile unsigned char *)95B] ={v} _24;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (_2 - 2 )
+Partition 3 (_3 - 3 )
+Partition 5 (_5 - 5 )
+Partition 6 (_6 - 6 )
+Partition 8 (_8 - 8 )
+Partition 9 (_9 - 9 )
+Partition 11 (_11 - 11 )
+Partition 12 (_12 - 12 )
+Partition 14 (_14 - 14 )
+Partition 15 (_15 - 15 )
+Partition 17 (_17 - 17 )
+Partition 18 (_18 - 18 )
+Partition 20 (_20 - 20 )
+Partition 21 (_21 - 21 )
+Partition 23 (_23 - 23 )
+Partition 24 (_24 - 24 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_2 - 2 )
+Partition 1 (_3 - 3 )
+Partition 2 (_5 - 5 )
+Partition 3 (_6 - 6 )
+Partition 4 (_8 - 8 )
+Partition 5 (_9 - 9 )
+Partition 6 (_11 - 11 )
+Partition 7 (_12 - 12 )
+Partition 8 (_14 - 14 )
+Partition 9 (_15 - 15 )
+Partition 10 (_17 - 17 )
+Partition 11 (_18 - 18 )
+Partition 12 (_20 - 20 )
+Partition 13 (_21 - 21 )
+Partition 14 (_23 - 23 )
+Partition 15 (_24 - 24 )
+
+EXTI_init ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _5;
+  unsigned char _6;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _11;
+  unsigned char _12;
+  unsigned char _14;
+  unsigned char _15;
+  unsigned char _17;
+  unsigned char _18;
+  unsigned char _20;
+  unsigned char _21;
+  unsigned char _23;
+  unsigned char _24;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)85B];
+  _3 = _2 | 4;
+  MEM[(volatile unsigned char *)85B] ={v} _3;
+  _5 ={v} MEM[(volatile unsigned char *)85B];
+  _6 = _5 | 8;
+  MEM[(volatile unsigned char *)85B] ={v} _6;
+  _8 ={v} MEM[(volatile unsigned char *)85B];
+  _9 = _8 | 1;
+  MEM[(volatile unsigned char *)85B] ={v} _9;
+  _11 ={v} MEM[(volatile unsigned char *)84B];
+  _12 = _11 & 191;
+  MEM[(volatile unsigned char *)84B] ={v} _12;
+  _14 ={v} MEM[(volatile unsigned char *)91B];
+  _15 = _14 | 128;
+  MEM[(volatile unsigned char *)91B] ={v} _15;
+  _17 ={v} MEM[(volatile unsigned char *)91B];
+  _18 = _17 | 64;
+  MEM[(volatile unsigned char *)91B] ={v} _18;
+  _20 ={v} MEM[(volatile unsigned char *)91B];
+  _21 = _20 | 32;
+  MEM[(volatile unsigned char *)91B] ={v} _21;
+  _23 ={v} MEM[(volatile unsigned char *)95B];
+  _24 = _23 | 128;
+  MEM[(volatile unsigned char *)95B] ={v} _24;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _2 ={v} MEM[(volatile unsigned char *)85B];
+
+(insn 5 4 6 (set (reg/f:HI 58)
+        (const_int 85 [0x55])) .././main.c:40 -1
+     (nil))
+
+(insn 6 5 0 (set (reg:QI 42 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 58) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:40 -1
+     (nil))
+
+;; _3 = _2 | 4;
+
+(insn 7 6 0 (set (reg:QI 43 [ D.2044 ])
+        (ior:QI (reg:QI 42 [ D.2044 ])
+            (const_int 4 [0x4]))) .././main.c:40 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)85B] ={v} _3;
+
+(insn 8 7 9 (set (reg/f:HI 59)
+        (const_int 85 [0x55])) .././main.c:40 -1
+     (nil))
+
+(insn 9 8 0 (set (mem/v:QI (reg/f:HI 59) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 43 [ D.2044 ])) .././main.c:40 -1
+     (nil))
+
+;; _5 ={v} MEM[(volatile unsigned char *)85B];
+
+(insn 10 9 11 (set (reg/f:HI 60)
+        (const_int 85 [0x55])) .././main.c:40 -1
+     (nil))
+
+(insn 11 10 0 (set (reg:QI 44 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 60) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:40 -1
+     (nil))
+
+;; _6 = _5 | 8;
+
+(insn 12 11 0 (set (reg:QI 45 [ D.2044 ])
+        (ior:QI (reg:QI 44 [ D.2044 ])
+            (const_int 8 [0x8]))) .././main.c:40 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)85B] ={v} _6;
+
+(insn 13 12 14 (set (reg/f:HI 61)
+        (const_int 85 [0x55])) .././main.c:40 -1
+     (nil))
+
+(insn 14 13 0 (set (mem/v:QI (reg/f:HI 61) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 45 [ D.2044 ])) .././main.c:40 -1
+     (nil))
+
+;; _8 ={v} MEM[(volatile unsigned char *)85B];
+
+(insn 15 14 16 (set (reg/f:HI 62)
+        (const_int 85 [0x55])) .././main.c:41 -1
+     (nil))
+
+(insn 16 15 0 (set (reg:QI 46 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 62) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:41 -1
+     (nil))
+
+;; _9 = _8 | 1;
+
+(insn 17 16 0 (set (reg:QI 47 [ D.2044 ])
+        (ior:QI (reg:QI 46 [ D.2044 ])
+            (const_int 1 [0x1]))) .././main.c:41 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)85B] ={v} _9;
+
+(insn 18 17 19 (set (reg/f:HI 63)
+        (const_int 85 [0x55])) .././main.c:41 -1
+     (nil))
+
+(insn 19 18 0 (set (mem/v:QI (reg/f:HI 63) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 47 [ D.2044 ])) .././main.c:41 -1
+     (nil))
+
+;; _11 ={v} MEM[(volatile unsigned char *)84B];
+
+(insn 20 19 21 (set (reg/f:HI 64)
+        (const_int 84 [0x54])) .././main.c:42 -1
+     (nil))
+
+(insn 21 20 0 (set (reg:QI 48 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 64) [0 MEM[(volatile unsigned char *)84B]+0 S1 A8])) .././main.c:42 -1
+     (nil))
+
+;; _12 = _11 & 191;
+
+(insn 22 21 0 (set (reg:QI 49 [ D.2044 ])
+        (and:QI (reg:QI 48 [ D.2044 ])
+            (const_int -65 [0xffffffffffffffbf]))) .././main.c:42 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)84B] ={v} _12;
+
+(insn 23 22 24 (set (reg/f:HI 65)
+        (const_int 84 [0x54])) .././main.c:42 -1
+     (nil))
+
+(insn 24 23 0 (set (mem/v:QI (reg/f:HI 65) [0 MEM[(volatile unsigned char *)84B]+0 S1 A8])
+        (reg:QI 49 [ D.2044 ])) .././main.c:42 -1
+     (nil))
+
+;; _14 ={v} MEM[(volatile unsigned char *)91B];
+
+(insn 25 24 26 (set (reg/f:HI 66)
+        (const_int 91 [0x5b])) .././main.c:46 -1
+     (nil))
+
+(insn 26 25 0 (set (reg:QI 50 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 66) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:46 -1
+     (nil))
+
+;; _15 = _14 | 128;
+
+(insn 27 26 0 (set (reg:QI 51 [ D.2044 ])
+        (ior:QI (reg:QI 50 [ D.2044 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:46 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)91B] ={v} _15;
+
+(insn 28 27 29 (set (reg/f:HI 67)
+        (const_int 91 [0x5b])) .././main.c:46 -1
+     (nil))
+
+(insn 29 28 0 (set (mem/v:QI (reg/f:HI 67) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 51 [ D.2044 ])) .././main.c:46 -1
+     (nil))
+
+;; _17 ={v} MEM[(volatile unsigned char *)91B];
+
+(insn 30 29 31 (set (reg/f:HI 68)
+        (const_int 91 [0x5b])) .././main.c:47 -1
+     (nil))
+
+(insn 31 30 0 (set (reg:QI 52 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 68) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:47 -1
+     (nil))
+
+;; _18 = _17 | 64;
+
+(insn 32 31 0 (set (reg:QI 53 [ D.2044 ])
+        (ior:QI (reg:QI 52 [ D.2044 ])
+            (const_int 64 [0x40]))) .././main.c:47 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)91B] ={v} _18;
+
+(insn 33 32 34 (set (reg/f:HI 69)
+        (const_int 91 [0x5b])) .././main.c:47 -1
+     (nil))
+
+(insn 34 33 0 (set (mem/v:QI (reg/f:HI 69) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 53 [ D.2044 ])) .././main.c:47 -1
+     (nil))
+
+;; _20 ={v} MEM[(volatile unsigned char *)91B];
+
+(insn 35 34 36 (set (reg/f:HI 70)
+        (const_int 91 [0x5b])) .././main.c:48 -1
+     (nil))
+
+(insn 36 35 0 (set (reg:QI 54 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 70) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:48 -1
+     (nil))
+
+;; _21 = _20 | 32;
+
+(insn 37 36 0 (set (reg:QI 55 [ D.2044 ])
+        (ior:QI (reg:QI 54 [ D.2044 ])
+            (const_int 32 [0x20]))) .././main.c:48 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)91B] ={v} _21;
+
+(insn 38 37 39 (set (reg/f:HI 71)
+        (const_int 91 [0x5b])) .././main.c:48 -1
+     (nil))
+
+(insn 39 38 0 (set (mem/v:QI (reg/f:HI 71) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 55 [ D.2044 ])) .././main.c:48 -1
+     (nil))
+
+;; _23 ={v} MEM[(volatile unsigned char *)95B];
+
+(insn 40 39 41 (set (reg/f:HI 72)
+        (const_int 95 [0x5f])) .././main.c:51 -1
+     (nil))
+
+(insn 41 40 0 (set (reg:QI 56 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 72) [0 MEM[(volatile unsigned char *)95B]+0 S1 A8])) .././main.c:51 -1
+     (nil))
+
+;; _24 = _23 | 128;
+
+(insn 42 41 0 (set (reg:QI 57 [ D.2044 ])
+        (ior:QI (reg:QI 56 [ D.2044 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:51 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)95B] ={v} _24;
+
+(insn 43 42 44 (set (reg/f:HI 73)
+        (const_int 95 [0x5f])) .././main.c:51 -1
+     (nil))
+
+(insn 44 43 0 (set (mem/v:QI (reg/f:HI 73) [0 MEM[(volatile unsigned char *)95B]+0 S1 A8])
+        (reg:QI 57 [ D.2044 ])) .././main.c:51 -1
+     (nil))
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg/f:HI 58)
+        (const_int 85 [0x55])) .././main.c:40 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:QI 42 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 58) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:40 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:QI 43 [ D.2044 ])
+        (ior:QI (reg:QI 42 [ D.2044 ])
+            (const_int 4 [0x4]))) .././main.c:40 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:HI 59)
+        (const_int 85 [0x55])) .././main.c:40 -1
+     (nil))
+(insn 9 8 10 2 (set (mem/v:QI (reg/f:HI 59) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 43 [ D.2044 ])) .././main.c:40 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:HI 60)
+        (const_int 85 [0x55])) .././main.c:40 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:QI 44 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 60) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:40 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:QI 45 [ D.2044 ])
+        (ior:QI (reg:QI 44 [ D.2044 ])
+            (const_int 8 [0x8]))) .././main.c:40 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/f:HI 61)
+        (const_int 85 [0x55])) .././main.c:40 -1
+     (nil))
+(insn 14 13 15 2 (set (mem/v:QI (reg/f:HI 61) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 45 [ D.2044 ])) .././main.c:40 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/f:HI 62)
+        (const_int 85 [0x55])) .././main.c:41 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:QI 46 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 62) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:41 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:QI 47 [ D.2044 ])
+        (ior:QI (reg:QI 46 [ D.2044 ])
+            (const_int 1 [0x1]))) .././main.c:41 -1
+     (nil))
+(insn 18 17 19 2 (set (reg/f:HI 63)
+        (const_int 85 [0x55])) .././main.c:41 -1
+     (nil))
+(insn 19 18 20 2 (set (mem/v:QI (reg/f:HI 63) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 47 [ D.2044 ])) .././main.c:41 -1
+     (nil))
+(insn 20 19 21 2 (set (reg/f:HI 64)
+        (const_int 84 [0x54])) .././main.c:42 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:QI 48 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 64) [0 MEM[(volatile unsigned char *)84B]+0 S1 A8])) .././main.c:42 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:QI 49 [ D.2044 ])
+        (and:QI (reg:QI 48 [ D.2044 ])
+            (const_int -65 [0xffffffffffffffbf]))) .././main.c:42 -1
+     (nil))
+(insn 23 22 24 2 (set (reg/f:HI 65)
+        (const_int 84 [0x54])) .././main.c:42 -1
+     (nil))
+(insn 24 23 25 2 (set (mem/v:QI (reg/f:HI 65) [0 MEM[(volatile unsigned char *)84B]+0 S1 A8])
+        (reg:QI 49 [ D.2044 ])) .././main.c:42 -1
+     (nil))
+(insn 25 24 26 2 (set (reg/f:HI 66)
+        (const_int 91 [0x5b])) .././main.c:46 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:QI 50 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 66) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:46 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:QI 51 [ D.2044 ])
+        (ior:QI (reg:QI 50 [ D.2044 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:46 -1
+     (nil))
+(insn 28 27 29 2 (set (reg/f:HI 67)
+        (const_int 91 [0x5b])) .././main.c:46 -1
+     (nil))
+(insn 29 28 30 2 (set (mem/v:QI (reg/f:HI 67) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 51 [ D.2044 ])) .././main.c:46 -1
+     (nil))
+(insn 30 29 31 2 (set (reg/f:HI 68)
+        (const_int 91 [0x5b])) .././main.c:47 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:QI 52 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 68) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:47 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:QI 53 [ D.2044 ])
+        (ior:QI (reg:QI 52 [ D.2044 ])
+            (const_int 64 [0x40]))) .././main.c:47 -1
+     (nil))
+(insn 33 32 34 2 (set (reg/f:HI 69)
+        (const_int 91 [0x5b])) .././main.c:47 -1
+     (nil))
+(insn 34 33 35 2 (set (mem/v:QI (reg/f:HI 69) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 53 [ D.2044 ])) .././main.c:47 -1
+     (nil))
+(insn 35 34 36 2 (set (reg/f:HI 70)
+        (const_int 91 [0x5b])) .././main.c:48 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:QI 54 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 70) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:48 -1
+     (nil))
+(insn 37 36 38 2 (set (reg:QI 55 [ D.2044 ])
+        (ior:QI (reg:QI 54 [ D.2044 ])
+            (const_int 32 [0x20]))) .././main.c:48 -1
+     (nil))
+(insn 38 37 39 2 (set (reg/f:HI 71)
+        (const_int 91 [0x5b])) .././main.c:48 -1
+     (nil))
+(insn 39 38 40 2 (set (mem/v:QI (reg/f:HI 71) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 55 [ D.2044 ])) .././main.c:48 -1
+     (nil))
+(insn 40 39 41 2 (set (reg/f:HI 72)
+        (const_int 95 [0x5f])) .././main.c:51 -1
+     (nil))
+(insn 41 40 42 2 (set (reg:QI 56 [ D.2044 ])
+        (mem/v:QI (reg/f:HI 72) [0 MEM[(volatile unsigned char *)95B]+0 S1 A8])) .././main.c:51 -1
+     (nil))
+(insn 42 41 43 2 (set (reg:QI 57 [ D.2044 ])
+        (ior:QI (reg:QI 56 [ D.2044 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:51 -1
+     (nil))
+(insn 43 42 44 2 (set (reg/f:HI 73)
+        (const_int 95 [0x5f])) .././main.c:51 -1
+     (nil))
+(insn 44 43 0 2 (set (mem/v:QI (reg/f:HI 73) [0 MEM[(volatile unsigned char *)95B]+0 S1 A8])
+        (reg:QI 57 [ D.2044 ])) .././main.c:51 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function DIO_init (DIO_init, funcdef_no=22, decl_uid=1946, cgraph_uid=22, symbol_order=22)
+
+DIO_init ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _5;
+  unsigned char _6;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _11;
+  unsigned char _12;
+  unsigned char _14;
+  unsigned char _15;
+  unsigned char _17;
+  unsigned char _18;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)49B];
+  _3 = _2 & 251;
+  MEM[(volatile unsigned char *)49B] ={v} _3;
+  _5 ={v} MEM[(volatile unsigned char *)49B];
+  _6 = _5 & 247;
+  MEM[(volatile unsigned char *)49B] ={v} _6;
+  _8 ={v} MEM[(volatile unsigned char *)55B];
+  _9 = _8 & 251;
+  MEM[(volatile unsigned char *)55B] ={v} _9;
+  _11 ={v} MEM[(volatile unsigned char *)49B];
+  _12 = _11 | 32;
+  MEM[(volatile unsigned char *)49B] ={v} _12;
+  _14 ={v} MEM[(volatile unsigned char *)49B];
+  _15 = _14 | 64;
+  MEM[(volatile unsigned char *)49B] ={v} _15;
+  _17 ={v} MEM[(volatile unsigned char *)49B];
+  _18 = _17 | 128;
+  MEM[(volatile unsigned char *)49B] ={v} _18;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (_2 - 2 )
+Partition 3 (_3 - 3 )
+Partition 5 (_5 - 5 )
+Partition 6 (_6 - 6 )
+Partition 8 (_8 - 8 )
+Partition 9 (_9 - 9 )
+Partition 11 (_11 - 11 )
+Partition 12 (_12 - 12 )
+Partition 14 (_14 - 14 )
+Partition 15 (_15 - 15 )
+Partition 17 (_17 - 17 )
+Partition 18 (_18 - 18 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_2 - 2 )
+Partition 1 (_3 - 3 )
+Partition 2 (_5 - 5 )
+Partition 3 (_6 - 6 )
+Partition 4 (_8 - 8 )
+Partition 5 (_9 - 9 )
+Partition 6 (_11 - 11 )
+Partition 7 (_12 - 12 )
+Partition 8 (_14 - 14 )
+Partition 9 (_15 - 15 )
+Partition 10 (_17 - 17 )
+Partition 11 (_18 - 18 )
+
+DIO_init ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _5;
+  unsigned char _6;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _11;
+  unsigned char _12;
+  unsigned char _14;
+  unsigned char _15;
+  unsigned char _17;
+  unsigned char _18;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)49B];
+  _3 = _2 & 251;
+  MEM[(volatile unsigned char *)49B] ={v} _3;
+  _5 ={v} MEM[(volatile unsigned char *)49B];
+  _6 = _5 & 247;
+  MEM[(volatile unsigned char *)49B] ={v} _6;
+  _8 ={v} MEM[(volatile unsigned char *)55B];
+  _9 = _8 & 251;
+  MEM[(volatile unsigned char *)55B] ={v} _9;
+  _11 ={v} MEM[(volatile unsigned char *)49B];
+  _12 = _11 | 32;
+  MEM[(volatile unsigned char *)49B] ={v} _12;
+  _14 ={v} MEM[(volatile unsigned char *)49B];
+  _15 = _14 | 64;
+  MEM[(volatile unsigned char *)49B] ={v} _15;
+  _17 ={v} MEM[(volatile unsigned char *)49B];
+  _18 = _17 | 128;
+  MEM[(volatile unsigned char *)49B] ={v} _18;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _2 ={v} MEM[(volatile unsigned char *)49B];
+
+(insn 5 4 6 (set (reg/f:HI 54)
+        (const_int 49 [0x31])) .././main.c:57 -1
+     (nil))
+
+(insn 6 5 0 (set (reg:QI 42 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 54) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:57 -1
+     (nil))
+
+;; _3 = _2 & 251;
+
+(insn 7 6 0 (set (reg:QI 43 [ D.2045 ])
+        (and:QI (reg:QI 42 [ D.2045 ])
+            (const_int -5 [0xfffffffffffffffb]))) .././main.c:57 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)49B] ={v} _3;
+
+(insn 8 7 9 (set (reg/f:HI 55)
+        (const_int 49 [0x31])) .././main.c:57 -1
+     (nil))
+
+(insn 9 8 0 (set (mem/v:QI (reg/f:HI 55) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 43 [ D.2045 ])) .././main.c:57 -1
+     (nil))
+
+;; _5 ={v} MEM[(volatile unsigned char *)49B];
+
+(insn 10 9 11 (set (reg/f:HI 56)
+        (const_int 49 [0x31])) .././main.c:58 -1
+     (nil))
+
+(insn 11 10 0 (set (reg:QI 44 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 56) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:58 -1
+     (nil))
+
+;; _6 = _5 & 247;
+
+(insn 12 11 0 (set (reg:QI 45 [ D.2045 ])
+        (and:QI (reg:QI 44 [ D.2045 ])
+            (const_int -9 [0xfffffffffffffff7]))) .././main.c:58 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)49B] ={v} _6;
+
+(insn 13 12 14 (set (reg/f:HI 57)
+        (const_int 49 [0x31])) .././main.c:58 -1
+     (nil))
+
+(insn 14 13 0 (set (mem/v:QI (reg/f:HI 57) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 45 [ D.2045 ])) .././main.c:58 -1
+     (nil))
+
+;; _8 ={v} MEM[(volatile unsigned char *)55B];
+
+(insn 15 14 16 (set (reg/f:HI 58)
+        (const_int 55 [0x37])) .././main.c:59 -1
+     (nil))
+
+(insn 16 15 0 (set (reg:QI 46 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 58) [0 MEM[(volatile unsigned char *)55B]+0 S1 A8])) .././main.c:59 -1
+     (nil))
+
+;; _9 = _8 & 251;
+
+(insn 17 16 0 (set (reg:QI 47 [ D.2045 ])
+        (and:QI (reg:QI 46 [ D.2045 ])
+            (const_int -5 [0xfffffffffffffffb]))) .././main.c:59 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)55B] ={v} _9;
+
+(insn 18 17 19 (set (reg/f:HI 59)
+        (const_int 55 [0x37])) .././main.c:59 -1
+     (nil))
+
+(insn 19 18 0 (set (mem/v:QI (reg/f:HI 59) [0 MEM[(volatile unsigned char *)55B]+0 S1 A8])
+        (reg:QI 47 [ D.2045 ])) .././main.c:59 -1
+     (nil))
+
+;; _11 ={v} MEM[(volatile unsigned char *)49B];
+
+(insn 20 19 21 (set (reg/f:HI 60)
+        (const_int 49 [0x31])) .././main.c:62 -1
+     (nil))
+
+(insn 21 20 0 (set (reg:QI 48 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 60) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:62 -1
+     (nil))
+
+;; _12 = _11 | 32;
+
+(insn 22 21 0 (set (reg:QI 49 [ D.2045 ])
+        (ior:QI (reg:QI 48 [ D.2045 ])
+            (const_int 32 [0x20]))) .././main.c:62 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)49B] ={v} _12;
+
+(insn 23 22 24 (set (reg/f:HI 61)
+        (const_int 49 [0x31])) .././main.c:62 -1
+     (nil))
+
+(insn 24 23 0 (set (mem/v:QI (reg/f:HI 61) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 49 [ D.2045 ])) .././main.c:62 -1
+     (nil))
+
+;; _14 ={v} MEM[(volatile unsigned char *)49B];
+
+(insn 25 24 26 (set (reg/f:HI 62)
+        (const_int 49 [0x31])) .././main.c:63 -1
+     (nil))
+
+(insn 26 25 0 (set (reg:QI 50 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 62) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:63 -1
+     (nil))
+
+;; _15 = _14 | 64;
+
+(insn 27 26 0 (set (reg:QI 51 [ D.2045 ])
+        (ior:QI (reg:QI 50 [ D.2045 ])
+            (const_int 64 [0x40]))) .././main.c:63 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)49B] ={v} _15;
+
+(insn 28 27 29 (set (reg/f:HI 63)
+        (const_int 49 [0x31])) .././main.c:63 -1
+     (nil))
+
+(insn 29 28 0 (set (mem/v:QI (reg/f:HI 63) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 51 [ D.2045 ])) .././main.c:63 -1
+     (nil))
+
+;; _17 ={v} MEM[(volatile unsigned char *)49B];
+
+(insn 30 29 31 (set (reg/f:HI 64)
+        (const_int 49 [0x31])) .././main.c:64 -1
+     (nil))
+
+(insn 31 30 0 (set (reg:QI 52 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 64) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:64 -1
+     (nil))
+
+;; _18 = _17 | 128;
+
+(insn 32 31 0 (set (reg:QI 53 [ D.2045 ])
+        (ior:QI (reg:QI 52 [ D.2045 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:64 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)49B] ={v} _18;
+
+(insn 33 32 34 (set (reg/f:HI 65)
+        (const_int 49 [0x31])) .././main.c:64 -1
+     (nil))
+
+(insn 34 33 0 (set (mem/v:QI (reg/f:HI 65) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 53 [ D.2045 ])) .././main.c:64 -1
+     (nil))
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg/f:HI 54)
+        (const_int 49 [0x31])) .././main.c:57 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:QI 42 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 54) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:57 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:QI 43 [ D.2045 ])
+        (and:QI (reg:QI 42 [ D.2045 ])
+            (const_int -5 [0xfffffffffffffffb]))) .././main.c:57 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:HI 55)
+        (const_int 49 [0x31])) .././main.c:57 -1
+     (nil))
+(insn 9 8 10 2 (set (mem/v:QI (reg/f:HI 55) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 43 [ D.2045 ])) .././main.c:57 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:HI 56)
+        (const_int 49 [0x31])) .././main.c:58 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:QI 44 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 56) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:58 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:QI 45 [ D.2045 ])
+        (and:QI (reg:QI 44 [ D.2045 ])
+            (const_int -9 [0xfffffffffffffff7]))) .././main.c:58 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/f:HI 57)
+        (const_int 49 [0x31])) .././main.c:58 -1
+     (nil))
+(insn 14 13 15 2 (set (mem/v:QI (reg/f:HI 57) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 45 [ D.2045 ])) .././main.c:58 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/f:HI 58)
+        (const_int 55 [0x37])) .././main.c:59 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:QI 46 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 58) [0 MEM[(volatile unsigned char *)55B]+0 S1 A8])) .././main.c:59 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:QI 47 [ D.2045 ])
+        (and:QI (reg:QI 46 [ D.2045 ])
+            (const_int -5 [0xfffffffffffffffb]))) .././main.c:59 -1
+     (nil))
+(insn 18 17 19 2 (set (reg/f:HI 59)
+        (const_int 55 [0x37])) .././main.c:59 -1
+     (nil))
+(insn 19 18 20 2 (set (mem/v:QI (reg/f:HI 59) [0 MEM[(volatile unsigned char *)55B]+0 S1 A8])
+        (reg:QI 47 [ D.2045 ])) .././main.c:59 -1
+     (nil))
+(insn 20 19 21 2 (set (reg/f:HI 60)
+        (const_int 49 [0x31])) .././main.c:62 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:QI 48 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 60) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:62 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:QI 49 [ D.2045 ])
+        (ior:QI (reg:QI 48 [ D.2045 ])
+            (const_int 32 [0x20]))) .././main.c:62 -1
+     (nil))
+(insn 23 22 24 2 (set (reg/f:HI 61)
+        (const_int 49 [0x31])) .././main.c:62 -1
+     (nil))
+(insn 24 23 25 2 (set (mem/v:QI (reg/f:HI 61) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 49 [ D.2045 ])) .././main.c:62 -1
+     (nil))
+(insn 25 24 26 2 (set (reg/f:HI 62)
+        (const_int 49 [0x31])) .././main.c:63 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:QI 50 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 62) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:63 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:QI 51 [ D.2045 ])
+        (ior:QI (reg:QI 50 [ D.2045 ])
+            (const_int 64 [0x40]))) .././main.c:63 -1
+     (nil))
+(insn 28 27 29 2 (set (reg/f:HI 63)
+        (const_int 49 [0x31])) .././main.c:63 -1
+     (nil))
+(insn 29 28 30 2 (set (mem/v:QI (reg/f:HI 63) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 51 [ D.2045 ])) .././main.c:63 -1
+     (nil))
+(insn 30 29 31 2 (set (reg/f:HI 64)
+        (const_int 49 [0x31])) .././main.c:64 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:QI 52 [ D.2045 ])
+        (mem/v:QI (reg/f:HI 64) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:64 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:QI 53 [ D.2045 ])
+        (ior:QI (reg:QI 52 [ D.2045 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:64 -1
+     (nil))
+(insn 33 32 34 2 (set (reg/f:HI 65)
+        (const_int 49 [0x31])) .././main.c:64 -1
+     (nil))
+(insn 34 33 0 2 (set (mem/v:QI (reg/f:HI 65) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 53 [ D.2045 ])) .././main.c:64 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function main (main, funcdef_no=23, decl_uid=1949, cgraph_uid=23, symbol_order=23) (executed once)
+
+main ()
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  DIO_init ();
+  EXTI_init ();
+;;    succ:       3
+
+;;   basic block 3, loop depth 1
+;;    pred:       2
+;;                3
+  goto <bb 3>;
+;;    succ:       3
+
+}
+
+
+
+Partition map 
+
+
+After Coalescing:
+
+Partition map 
+
+
+main ()
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  DIO_init ();
+  EXTI_init ();
+;;    succ:       3
+
+;;   basic block 3, loop depth 1
+;;    pred:       2
+;;                3
+  goto <bb 3>;
+;;    succ:       3
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; DIO_init ();
+
+(call_insn 5 4 0 (parallel [
+            (call (mem:HI (symbol_ref:HI ("DIO_init") [flags 0x3]  <function_decl 00000000060761b0 DIO_init>) [0 DIO_init S2 A8])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+        ]) .././main.c:69 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (nil))
+
+;; EXTI_init ();
+
+(call_insn 6 5 0 (parallel [
+            (call (mem:HI (symbol_ref:HI ("EXTI_init") [flags 0x3]  <function_decl 0000000006076000 EXTI_init>) [0 EXTI_init S2 A8])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+        ]) .././main.c:70 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 3
+deleting block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 1, maybe hot
+;;  prev block 0, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(call_insn 5 2 6 2 (parallel [
+            (call (mem:HI (symbol_ref:HI ("DIO_init") [flags 0x3]  <function_decl 00000000060761b0 DIO_init>) [0 DIO_init S2 A8])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+        ]) .././main.c:69 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (nil))
+(call_insn 6 5 8 2 (parallel [
+            (call (mem:HI (symbol_ref:HI ("EXTI_init") [flags 0x3]  <function_decl 0000000006076000 EXTI_init>) [0 EXTI_init S2 A8])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+        ]) .././main.c:70 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (nil))
+;;  succ:       4 [100.0%]  (FALLTHRU)
+
+;; basic block 4, loop depth 1, count 0, freq 10000, maybe hot
+;;  prev block 2, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2 [100.0%]  (FALLTHRU)
+;;              4 [100.0%]  (DFS_BACK)
+(code_label 8 6 7 4 4 "" [1 uses])
+(note 7 8 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 9 7 10 4 (set (pc)
+        (label_ref 8)) .././main.c:70 -1
+     (nil)
+ -> 8)
+;;  succ:       4 [100.0%]  (DFS_BACK)
+
+(barrier 10 9 0)
+
+;; Function __vector_1 (__vector_1, funcdef_no=24, decl_uid=1953, cgraph_uid=24, symbol_order=24)
+
+__vector_1 ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _6;
+  unsigned char _7;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)50B];
+  _3 = _2 | 32;
+  MEM[(volatile unsigned char *)50B] ={v} _3;
+  # DEBUG __ms => 1.0e+3
+  # DEBUG __tmp => 1.0e+6
+  # DEBUG __ticks_dc => 1000000
+  __builtin_avr_delay_cycles (1000000);
+  # DEBUG __ms => NULL
+  # DEBUG __ticks_dc => NULL
+  # DEBUG __tmp => NULL
+  _6 ={v} MEM[(volatile unsigned char *)50B];
+  _7 = _6 & 223;
+  MEM[(volatile unsigned char *)50B] ={v} _7;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (_2 - 2 )
+Partition 3 (_3 - 3 )
+Partition 6 (_6 - 6 )
+Partition 7 (_7 - 7 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_2 - 2 )
+Partition 1 (_3 - 3 )
+Partition 2 (_6 - 6 )
+Partition 3 (_7 - 7 )
+
+__vector_1 ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _6;
+  unsigned char _7;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)50B];
+  _3 = _2 | 32;
+  MEM[(volatile unsigned char *)50B] ={v} _3;
+  # DEBUG __ms => 1.0e+3
+  # DEBUG __tmp => 1.0e+6
+  # DEBUG __ticks_dc => 1000000
+  __builtin_avr_delay_cycles (1000000);
+  # DEBUG __ms => NULL
+  # DEBUG __ticks_dc => NULL
+  # DEBUG __tmp => NULL
+  _6 ={v} MEM[(volatile unsigned char *)50B];
+  _7 = _6 & 223;
+  MEM[(volatile unsigned char *)50B] ={v} _7;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _2 ={v} MEM[(volatile unsigned char *)50B];
+
+(insn 5 4 6 (set (reg/f:HI 46)
+        (const_int 50 [0x32])) .././main.c:78 -1
+     (nil))
+
+(insn 6 5 0 (set (reg:QI 42 [ D.2046 ])
+        (mem/v:QI (reg/f:HI 46) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:78 -1
+     (nil))
+
+;; _3 = _2 | 32;
+
+(insn 7 6 0 (set (reg:QI 43 [ D.2046 ])
+        (ior:QI (reg:QI 42 [ D.2046 ])
+            (const_int 32 [0x20]))) .././main.c:78 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)50B] ={v} _3;
+
+(insn 8 7 9 (set (reg/f:HI 47)
+        (const_int 50 [0x32])) .././main.c:78 -1
+     (nil))
+
+(insn 9 8 0 (set (mem/v:QI (reg/f:HI 47) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2046 ])) .././main.c:78 -1
+     (nil))
+
+;; # DEBUG __ms => 1.0e+3
+
+(debug_insn 10 9 0 (var_location:SF __ms (const_int 0 [0])) .././main.c:78 -1
+     (nil))
+;; # DEBUG __tmp => 1.0e+6
+
+(debug_insn 11 10 0 (var_location:SF __tmp (const_int 0 [0])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+;; # DEBUG __ticks_dc => 1000000
+
+(debug_insn 12 11 0 (var_location:SI __ticks_dc (const_int 0 [0])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+;; __builtin_avr_delay_cycles (1000000);
+
+(insn 13 12 14 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+(insn 14 13 15 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+(insn 15 14 0 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+;; # DEBUG __ms => NULL
+
+(debug_insn 16 15 0 (var_location:SF __ms (const_int 0 [0])) .././main.c:79 -1
+     (nil))
+;; # DEBUG __ticks_dc => NULL
+
+(debug_insn 17 16 0 (var_location:SI __ticks_dc (const_int 0 [0])) .././main.c:79 -1
+     (nil))
+;; # DEBUG __tmp => NULL
+
+(debug_insn 18 17 0 (var_location:SF __tmp (const_int 0 [0])) .././main.c:79 -1
+     (nil))
+;; _6 ={v} MEM[(volatile unsigned char *)50B];
+
+(insn 19 18 20 (set (reg/f:HI 48)
+        (const_int 50 [0x32])) .././main.c:80 -1
+     (nil))
+
+(insn 20 19 0 (set (reg:QI 44 [ D.2046 ])
+        (mem/v:QI (reg/f:HI 48) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:80 -1
+     (nil))
+
+;; _7 = _6 & 223;
+
+(insn 21 20 0 (set (reg:QI 45 [ D.2046 ])
+        (and:QI (reg:QI 44 [ D.2046 ])
+            (const_int -33 [0xffffffffffffffdf]))) .././main.c:80 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)50B] ={v} _7;
+
+(insn 22 21 23 (set (reg/f:HI 49)
+        (const_int 50 [0x32])) .././main.c:80 -1
+     (nil))
+
+(insn 23 22 0 (set (mem/v:QI (reg/f:HI 49) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2046 ])) .././main.c:80 -1
+     (nil))
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg/f:HI 46)
+        (const_int 50 [0x32])) .././main.c:78 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:QI 42 [ D.2046 ])
+        (mem/v:QI (reg/f:HI 46) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:78 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:QI 43 [ D.2046 ])
+        (ior:QI (reg:QI 42 [ D.2046 ])
+            (const_int 32 [0x20]))) .././main.c:78 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:HI 47)
+        (const_int 50 [0x32])) .././main.c:78 -1
+     (nil))
+(insn 9 8 10 2 (set (mem/v:QI (reg/f:HI 47) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2046 ])) .././main.c:78 -1
+     (nil))
+(debug_insn 10 9 11 2 (var_location:SF __ms (const_double:SF 1.0e+3 [0x0.fap+10])) .././main.c:78 -1
+     (nil))
+(debug_insn 11 10 12 2 (var_location:SF __tmp (const_double:SF 1.0e+6 [0x0.f424p+20])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:SI __ticks_dc (const_int 1000000 [0xf4240])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(insn 15 14 16 2 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(debug_insn 16 15 17 2 (var_location:SF __ms (clobber (const_int 0 [0]))) .././main.c:79 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:SI __ticks_dc (clobber (const_int 0 [0]))) .././main.c:79 -1
+     (nil))
+(debug_insn 18 17 19 2 (var_location:SF __tmp (clobber (const_int 0 [0]))) .././main.c:79 -1
+     (nil))
+(insn 19 18 20 2 (set (reg/f:HI 48)
+        (const_int 50 [0x32])) .././main.c:80 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:QI 44 [ D.2046 ])
+        (mem/v:QI (reg/f:HI 48) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:80 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:QI 45 [ D.2046 ])
+        (and:QI (reg:QI 44 [ D.2046 ])
+            (const_int -33 [0xffffffffffffffdf]))) .././main.c:80 -1
+     (nil))
+(insn 22 21 23 2 (set (reg/f:HI 49)
+        (const_int 50 [0x32])) .././main.c:80 -1
+     (nil))
+(insn 23 22 0 2 (set (mem/v:QI (reg/f:HI 49) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2046 ])) .././main.c:80 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function __vector_2 (__vector_2, funcdef_no=25, decl_uid=1958, cgraph_uid=25, symbol_order=25)
+
+__vector_2 ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _6;
+  unsigned char _7;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)50B];
+  _3 = _2 | 64;
+  MEM[(volatile unsigned char *)50B] ={v} _3;
+  # DEBUG __ms => 1.0e+3
+  # DEBUG __tmp => 1.0e+6
+  # DEBUG __ticks_dc => 1000000
+  __builtin_avr_delay_cycles (1000000);
+  # DEBUG __ms => NULL
+  # DEBUG __ticks_dc => NULL
+  # DEBUG __tmp => NULL
+  _6 ={v} MEM[(volatile unsigned char *)50B];
+  _7 = _6 & 191;
+  MEM[(volatile unsigned char *)50B] ={v} _7;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (_2 - 2 )
+Partition 3 (_3 - 3 )
+Partition 6 (_6 - 6 )
+Partition 7 (_7 - 7 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_2 - 2 )
+Partition 1 (_3 - 3 )
+Partition 2 (_6 - 6 )
+Partition 3 (_7 - 7 )
+
+__vector_2 ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _6;
+  unsigned char _7;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)50B];
+  _3 = _2 | 64;
+  MEM[(volatile unsigned char *)50B] ={v} _3;
+  # DEBUG __ms => 1.0e+3
+  # DEBUG __tmp => 1.0e+6
+  # DEBUG __ticks_dc => 1000000
+  __builtin_avr_delay_cycles (1000000);
+  # DEBUG __ms => NULL
+  # DEBUG __ticks_dc => NULL
+  # DEBUG __tmp => NULL
+  _6 ={v} MEM[(volatile unsigned char *)50B];
+  _7 = _6 & 191;
+  MEM[(volatile unsigned char *)50B] ={v} _7;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _2 ={v} MEM[(volatile unsigned char *)50B];
+
+(insn 5 4 6 (set (reg/f:HI 46)
+        (const_int 50 [0x32])) .././main.c:84 -1
+     (nil))
+
+(insn 6 5 0 (set (reg:QI 42 [ D.2047 ])
+        (mem/v:QI (reg/f:HI 46) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:84 -1
+     (nil))
+
+;; _3 = _2 | 64;
+
+(insn 7 6 0 (set (reg:QI 43 [ D.2047 ])
+        (ior:QI (reg:QI 42 [ D.2047 ])
+            (const_int 64 [0x40]))) .././main.c:84 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)50B] ={v} _3;
+
+(insn 8 7 9 (set (reg/f:HI 47)
+        (const_int 50 [0x32])) .././main.c:84 -1
+     (nil))
+
+(insn 9 8 0 (set (mem/v:QI (reg/f:HI 47) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2047 ])) .././main.c:84 -1
+     (nil))
+
+;; # DEBUG __ms => 1.0e+3
+
+(debug_insn 10 9 0 (var_location:SF __ms (const_int 0 [0])) .././main.c:84 -1
+     (nil))
+;; # DEBUG __tmp => 1.0e+6
+
+(debug_insn 11 10 0 (var_location:SF __tmp (const_int 0 [0])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+;; # DEBUG __ticks_dc => 1000000
+
+(debug_insn 12 11 0 (var_location:SI __ticks_dc (const_int 0 [0])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+;; __builtin_avr_delay_cycles (1000000);
+
+(insn 13 12 14 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+(insn 14 13 15 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+(insn 15 14 0 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+;; # DEBUG __ms => NULL
+
+(debug_insn 16 15 0 (var_location:SF __ms (const_int 0 [0])) .././main.c:85 -1
+     (nil))
+;; # DEBUG __ticks_dc => NULL
+
+(debug_insn 17 16 0 (var_location:SI __ticks_dc (const_int 0 [0])) .././main.c:85 -1
+     (nil))
+;; # DEBUG __tmp => NULL
+
+(debug_insn 18 17 0 (var_location:SF __tmp (const_int 0 [0])) .././main.c:85 -1
+     (nil))
+;; _6 ={v} MEM[(volatile unsigned char *)50B];
+
+(insn 19 18 20 (set (reg/f:HI 48)
+        (const_int 50 [0x32])) .././main.c:86 -1
+     (nil))
+
+(insn 20 19 0 (set (reg:QI 44 [ D.2047 ])
+        (mem/v:QI (reg/f:HI 48) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:86 -1
+     (nil))
+
+;; _7 = _6 & 191;
+
+(insn 21 20 0 (set (reg:QI 45 [ D.2047 ])
+        (and:QI (reg:QI 44 [ D.2047 ])
+            (const_int -65 [0xffffffffffffffbf]))) .././main.c:86 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)50B] ={v} _7;
+
+(insn 22 21 23 (set (reg/f:HI 49)
+        (const_int 50 [0x32])) .././main.c:86 -1
+     (nil))
+
+(insn 23 22 0 (set (mem/v:QI (reg/f:HI 49) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2047 ])) .././main.c:86 -1
+     (nil))
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg/f:HI 46)
+        (const_int 50 [0x32])) .././main.c:84 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:QI 42 [ D.2047 ])
+        (mem/v:QI (reg/f:HI 46) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:84 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:QI 43 [ D.2047 ])
+        (ior:QI (reg:QI 42 [ D.2047 ])
+            (const_int 64 [0x40]))) .././main.c:84 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:HI 47)
+        (const_int 50 [0x32])) .././main.c:84 -1
+     (nil))
+(insn 9 8 10 2 (set (mem/v:QI (reg/f:HI 47) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2047 ])) .././main.c:84 -1
+     (nil))
+(debug_insn 10 9 11 2 (var_location:SF __ms (const_double:SF 1.0e+3 [0x0.fap+10])) .././main.c:84 -1
+     (nil))
+(debug_insn 11 10 12 2 (var_location:SF __tmp (const_double:SF 1.0e+6 [0x0.f424p+20])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:SI __ticks_dc (const_int 1000000 [0xf4240])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(insn 15 14 16 2 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(debug_insn 16 15 17 2 (var_location:SF __ms (clobber (const_int 0 [0]))) .././main.c:85 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:SI __ticks_dc (clobber (const_int 0 [0]))) .././main.c:85 -1
+     (nil))
+(debug_insn 18 17 19 2 (var_location:SF __tmp (clobber (const_int 0 [0]))) .././main.c:85 -1
+     (nil))
+(insn 19 18 20 2 (set (reg/f:HI 48)
+        (const_int 50 [0x32])) .././main.c:86 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:QI 44 [ D.2047 ])
+        (mem/v:QI (reg/f:HI 48) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:86 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:QI 45 [ D.2047 ])
+        (and:QI (reg:QI 44 [ D.2047 ])
+            (const_int -65 [0xffffffffffffffbf]))) .././main.c:86 -1
+     (nil))
+(insn 22 21 23 2 (set (reg/f:HI 49)
+        (const_int 50 [0x32])) .././main.c:86 -1
+     (nil))
+(insn 23 22 0 2 (set (mem/v:QI (reg/f:HI 49) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2047 ])) .././main.c:86 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function __vector_3 (__vector_3, funcdef_no=26, decl_uid=1963, cgraph_uid=26, symbol_order=26)
+
+__vector_3 ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _6;
+  unsigned char _7;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)50B];
+  _3 = _2 | 128;
+  MEM[(volatile unsigned char *)50B] ={v} _3;
+  # DEBUG __ms => 1.0e+3
+  # DEBUG __tmp => 1.0e+6
+  # DEBUG __ticks_dc => 1000000
+  __builtin_avr_delay_cycles (1000000);
+  # DEBUG __ms => NULL
+  # DEBUG __ticks_dc => NULL
+  # DEBUG __tmp => NULL
+  _6 ={v} MEM[(volatile unsigned char *)50B];
+  _7 = _6 & 127;
+  MEM[(volatile unsigned char *)50B] ={v} _7;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (_2 - 2 )
+Partition 3 (_3 - 3 )
+Partition 6 (_6 - 6 )
+Partition 7 (_7 - 7 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_2 - 2 )
+Partition 1 (_3 - 3 )
+Partition 2 (_6 - 6 )
+Partition 3 (_7 - 7 )
+
+__vector_3 ()
+{
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _6;
+  unsigned char _7;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _2 ={v} MEM[(volatile unsigned char *)50B];
+  _3 = _2 | 128;
+  MEM[(volatile unsigned char *)50B] ={v} _3;
+  # DEBUG __ms => 1.0e+3
+  # DEBUG __tmp => 1.0e+6
+  # DEBUG __ticks_dc => 1000000
+  __builtin_avr_delay_cycles (1000000);
+  # DEBUG __ms => NULL
+  # DEBUG __ticks_dc => NULL
+  # DEBUG __tmp => NULL
+  _6 ={v} MEM[(volatile unsigned char *)50B];
+  _7 = _6 & 127;
+  MEM[(volatile unsigned char *)50B] ={v} _7;
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _2 ={v} MEM[(volatile unsigned char *)50B];
+
+(insn 5 4 6 (set (reg/f:HI 46)
+        (const_int 50 [0x32])) .././main.c:90 -1
+     (nil))
+
+(insn 6 5 0 (set (reg:QI 42 [ D.2048 ])
+        (mem/v:QI (reg/f:HI 46) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:90 -1
+     (nil))
+
+;; _3 = _2 | 128;
+
+(insn 7 6 0 (set (reg:QI 43 [ D.2048 ])
+        (ior:QI (reg:QI 42 [ D.2048 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:90 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)50B] ={v} _3;
+
+(insn 8 7 9 (set (reg/f:HI 47)
+        (const_int 50 [0x32])) .././main.c:90 -1
+     (nil))
+
+(insn 9 8 0 (set (mem/v:QI (reg/f:HI 47) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2048 ])) .././main.c:90 -1
+     (nil))
+
+;; # DEBUG __ms => 1.0e+3
+
+(debug_insn 10 9 0 (var_location:SF __ms (const_int 0 [0])) .././main.c:90 -1
+     (nil))
+;; # DEBUG __tmp => 1.0e+6
+
+(debug_insn 11 10 0 (var_location:SF __tmp (const_int 0 [0])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+;; # DEBUG __ticks_dc => 1000000
+
+(debug_insn 12 11 0 (var_location:SI __ticks_dc (const_int 0 [0])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+;; __builtin_avr_delay_cycles (1000000);
+
+(insn 13 12 14 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+(insn 14 13 15 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+(insn 15 14 0 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+
+;; # DEBUG __ms => NULL
+
+(debug_insn 16 15 0 (var_location:SF __ms (const_int 0 [0])) .././main.c:91 -1
+     (nil))
+;; # DEBUG __ticks_dc => NULL
+
+(debug_insn 17 16 0 (var_location:SI __ticks_dc (const_int 0 [0])) .././main.c:91 -1
+     (nil))
+;; # DEBUG __tmp => NULL
+
+(debug_insn 18 17 0 (var_location:SF __tmp (const_int 0 [0])) .././main.c:91 -1
+     (nil))
+;; _6 ={v} MEM[(volatile unsigned char *)50B];
+
+(insn 19 18 20 (set (reg/f:HI 48)
+        (const_int 50 [0x32])) .././main.c:92 -1
+     (nil))
+
+(insn 20 19 0 (set (reg:QI 44 [ D.2048 ])
+        (mem/v:QI (reg/f:HI 48) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:92 -1
+     (nil))
+
+;; _7 = _6 & 127;
+
+(insn 21 20 0 (set (reg:QI 45 [ D.2048 ])
+        (and:QI (reg:QI 44 [ D.2048 ])
+            (const_int 127 [0x7f]))) .././main.c:92 -1
+     (nil))
+
+;; MEM[(volatile unsigned char *)50B] ={v} _7;
+
+(insn 22 21 23 (set (reg/f:HI 49)
+        (const_int 50 [0x32])) .././main.c:92 -1
+     (nil))
+
+(insn 23 22 0 (set (mem/v:QI (reg/f:HI 49) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2048 ])) .././main.c:92 -1
+     (nil))
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg/f:HI 46)
+        (const_int 50 [0x32])) .././main.c:90 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:QI 42 [ D.2048 ])
+        (mem/v:QI (reg/f:HI 46) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:90 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:QI 43 [ D.2048 ])
+        (ior:QI (reg:QI 42 [ D.2048 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:90 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:HI 47)
+        (const_int 50 [0x32])) .././main.c:90 -1
+     (nil))
+(insn 9 8 10 2 (set (mem/v:QI (reg/f:HI 47) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2048 ])) .././main.c:90 -1
+     (nil))
+(debug_insn 10 9 11 2 (var_location:SF __ms (const_double:SF 1.0e+3 [0x0.fap+10])) .././main.c:90 -1
+     (nil))
+(debug_insn 11 10 12 2 (var_location:SF __tmp (const_double:SF 1.0e+6 [0x0.f424p+20])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:SI __ticks_dc (const_int 1000000 [0xf4240])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(insn 15 14 16 2 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 -1
+     (nil))
+(debug_insn 16 15 17 2 (var_location:SF __ms (clobber (const_int 0 [0]))) .././main.c:91 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:SI __ticks_dc (clobber (const_int 0 [0]))) .././main.c:91 -1
+     (nil))
+(debug_insn 18 17 19 2 (var_location:SF __tmp (clobber (const_int 0 [0]))) .././main.c:91 -1
+     (nil))
+(insn 19 18 20 2 (set (reg/f:HI 48)
+        (const_int 50 [0x32])) .././main.c:92 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:QI 44 [ D.2048 ])
+        (mem/v:QI (reg/f:HI 48) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:92 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:QI 45 [ D.2048 ])
+        (and:QI (reg:QI 44 [ D.2048 ])
+            (const_int 127 [0x7f]))) .././main.c:92 -1
+     (nil))
+(insn 22 21 23 2 (set (reg/f:HI 49)
+        (const_int 50 [0x32])) .././main.c:92 -1
+     (nil))
+(insn 23 22 0 2 (set (mem/v:QI (reg/f:HI 49) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2048 ])) .././main.c:92 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+

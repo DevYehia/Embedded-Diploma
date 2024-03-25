@@ -1,0 +1,599 @@
+
+;; Function EXTI_init (EXTI_init, funcdef_no=21, decl_uid=1943, cgraph_uid=21, symbol_order=21)
+
+
+
+EXTI_init
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 26 [r26] 27 [r27] 30 [r30] 31 [r31] 33 [__SP_H__] 35 [argH]
+;;  hardware regs used 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  regular block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  eh block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  entry block defs 	 2 [r2] 8 [r8] 9 [r9] 10 [r10] 11 [r11] 12 [r12] 13 [r13] 14 [r14] 15 [r15] 16 [r16] 17 [r17] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  exit block uses 	 28 [r28] 32 [__SP_L__]
+;;  regs ever live 	
+;;  ref usage 	r2={1d} r8={1d} r9={1d} r10={1d} r11={1d} r12={1d} r13={1d} r14={1d} r15={1d} r16={1d} r17={1d} r18={1d} r19={1d} r20={1d} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r28={1d,2u} r32={1d,2u} r34={1d,1u} r42={1d,1u} r43={1d,1u} r44={1d,1u} r45={1d,1u} r46={1d,1u} r47={1d,1u} r48={1d,1u} r49={1d,1u} r50={1d,1u} r51={1d,1u} r52={1d,1u} r53={1d,1u} r54={1d,1u} r55={1d,1u} r56={1d,1u} r57={1d,1u} 
+;;    total ref usage 59{38d,21u,0e} in 24{24 regular + 0 call} insns.
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u0(28){ }u1(32){ }u2(34){ }}
+;; lr  in  	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  use 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  def 	 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 2 7 2 (set (reg:QI 42 [ D.2044 ])
+        (mem/v:QI (const_int 85 [0x55]) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:40 71 {movqi_insn}
+     (nil))
+(insn 7 6 9 2 (set (reg:QI 43 [ D.2044 ])
+        (ior:QI (reg:QI 42 [ D.2044 ])
+            (const_int 4 [0x4]))) .././main.c:40 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 42 [ D.2044 ])
+        (nil)))
+(insn 9 7 11 2 (set (mem/v:QI (const_int 85 [0x55]) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 43 [ D.2044 ])) .././main.c:40 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 43 [ D.2044 ])
+        (nil)))
+(insn 11 9 12 2 (set (reg:QI 44 [ D.2044 ])
+        (mem/v:QI (const_int 85 [0x55]) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:40 71 {movqi_insn}
+     (nil))
+(insn 12 11 14 2 (set (reg:QI 45 [ D.2044 ])
+        (ior:QI (reg:QI 44 [ D.2044 ])
+            (const_int 8 [0x8]))) .././main.c:40 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 44 [ D.2044 ])
+        (nil)))
+(insn 14 12 16 2 (set (mem/v:QI (const_int 85 [0x55]) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 45 [ D.2044 ])) .././main.c:40 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 45 [ D.2044 ])
+        (nil)))
+(insn 16 14 17 2 (set (reg:QI 46 [ D.2044 ])
+        (mem/v:QI (const_int 85 [0x55]) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])) .././main.c:41 71 {movqi_insn}
+     (nil))
+(insn 17 16 19 2 (set (reg:QI 47 [ D.2044 ])
+        (ior:QI (reg:QI 46 [ D.2044 ])
+            (const_int 1 [0x1]))) .././main.c:41 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 46 [ D.2044 ])
+        (nil)))
+(insn 19 17 21 2 (set (mem/v:QI (const_int 85 [0x55]) [0 MEM[(volatile unsigned char *)85B]+0 S1 A8])
+        (reg:QI 47 [ D.2044 ])) .././main.c:41 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 47 [ D.2044 ])
+        (nil)))
+(insn 21 19 22 2 (set (reg:QI 48 [ D.2044 ])
+        (mem/v:QI (const_int 84 [0x54]) [0 MEM[(volatile unsigned char *)84B]+0 S1 A8])) .././main.c:42 71 {movqi_insn}
+     (nil))
+(insn 22 21 24 2 (set (reg:QI 49 [ D.2044 ])
+        (and:QI (reg:QI 48 [ D.2044 ])
+            (const_int -65 [0xffffffffffffffbf]))) .././main.c:42 262 {andqi3}
+     (expr_list:REG_DEAD (reg:QI 48 [ D.2044 ])
+        (nil)))
+(insn 24 22 26 2 (set (mem/v:QI (const_int 84 [0x54]) [0 MEM[(volatile unsigned char *)84B]+0 S1 A8])
+        (reg:QI 49 [ D.2044 ])) .././main.c:42 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 49 [ D.2044 ])
+        (nil)))
+(insn 26 24 27 2 (set (reg:QI 50 [ D.2044 ])
+        (mem/v:QI (const_int 91 [0x5b]) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:46 71 {movqi_insn}
+     (nil))
+(insn 27 26 29 2 (set (reg:QI 51 [ D.2044 ])
+        (ior:QI (reg:QI 50 [ D.2044 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:46 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 50 [ D.2044 ])
+        (nil)))
+(insn 29 27 31 2 (set (mem/v:QI (const_int 91 [0x5b]) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 51 [ D.2044 ])) .././main.c:46 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 51 [ D.2044 ])
+        (nil)))
+(insn 31 29 32 2 (set (reg:QI 52 [ D.2044 ])
+        (mem/v:QI (const_int 91 [0x5b]) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:47 71 {movqi_insn}
+     (nil))
+(insn 32 31 34 2 (set (reg:QI 53 [ D.2044 ])
+        (ior:QI (reg:QI 52 [ D.2044 ])
+            (const_int 64 [0x40]))) .././main.c:47 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 52 [ D.2044 ])
+        (nil)))
+(insn 34 32 36 2 (set (mem/v:QI (const_int 91 [0x5b]) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 53 [ D.2044 ])) .././main.c:47 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 53 [ D.2044 ])
+        (nil)))
+(insn 36 34 37 2 (set (reg:QI 54 [ D.2044 ])
+        (mem/v:QI (const_int 91 [0x5b]) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])) .././main.c:48 71 {movqi_insn}
+     (nil))
+(insn 37 36 39 2 (set (reg:QI 55 [ D.2044 ])
+        (ior:QI (reg:QI 54 [ D.2044 ])
+            (const_int 32 [0x20]))) .././main.c:48 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 54 [ D.2044 ])
+        (nil)))
+(insn 39 37 41 2 (set (mem/v:QI (const_int 91 [0x5b]) [0 MEM[(volatile unsigned char *)91B]+0 S1 A8])
+        (reg:QI 55 [ D.2044 ])) .././main.c:48 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 55 [ D.2044 ])
+        (nil)))
+(insn 41 39 42 2 (set (reg:QI 56 [ D.2044 ])
+        (mem/v:QI (const_int 95 [0x5f]) [0 MEM[(volatile unsigned char *)95B]+0 S1 A8])) .././main.c:51 71 {movqi_insn}
+     (nil))
+(insn 42 41 44 2 (set (reg:QI 57 [ D.2044 ])
+        (ior:QI (reg:QI 56 [ D.2044 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:51 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 56 [ D.2044 ])
+        (nil)))
+(insn 44 42 0 2 (set (mem/v:QI (const_int 95 [0x5f]) [0 MEM[(volatile unsigned char *)95B]+0 S1 A8])
+        (reg:QI 57 [ D.2044 ])) .././main.c:51 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 57 [ D.2044 ])
+        (nil)))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+;; lr  out 	 28 [r28] 32 [__SP_L__] 34 [argL]
+
+
+;; Function DIO_init (DIO_init, funcdef_no=22, decl_uid=1946, cgraph_uid=22, symbol_order=22)
+
+
+
+DIO_init
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 26 [r26] 27 [r27] 30 [r30] 31 [r31] 33 [__SP_H__] 35 [argH]
+;;  hardware regs used 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  regular block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  eh block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  entry block defs 	 2 [r2] 8 [r8] 9 [r9] 10 [r10] 11 [r11] 12 [r12] 13 [r13] 14 [r14] 15 [r15] 16 [r16] 17 [r17] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  exit block uses 	 28 [r28] 32 [__SP_L__]
+;;  regs ever live 	
+;;  ref usage 	r2={1d} r8={1d} r9={1d} r10={1d} r11={1d} r12={1d} r13={1d} r14={1d} r15={1d} r16={1d} r17={1d} r18={1d} r19={1d} r20={1d} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r28={1d,2u} r32={1d,2u} r34={1d,1u} r42={1d,1u} r43={1d,1u} r44={1d,1u} r45={1d,1u} r46={1d,1u} r47={1d,1u} r48={1d,1u} r49={1d,1u} r50={1d,1u} r51={1d,1u} r52={1d,1u} r53={1d,1u} 
+;;    total ref usage 51{34d,17u,0e} in 18{18 regular + 0 call} insns.
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u0(28){ }u1(32){ }u2(34){ }}
+;; lr  in  	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  use 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  def 	 42 43 44 45 46 47 48 49 50 51 52 53
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 2 7 2 (set (reg:QI 42 [ D.2045 ])
+        (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:57 71 {movqi_insn}
+     (nil))
+(insn 7 6 9 2 (set (reg:QI 43 [ D.2045 ])
+        (and:QI (reg:QI 42 [ D.2045 ])
+            (const_int -5 [0xfffffffffffffffb]))) .././main.c:57 262 {andqi3}
+     (expr_list:REG_DEAD (reg:QI 42 [ D.2045 ])
+        (nil)))
+(insn 9 7 11 2 (set (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 43 [ D.2045 ])) .././main.c:57 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 43 [ D.2045 ])
+        (nil)))
+(insn 11 9 12 2 (set (reg:QI 44 [ D.2045 ])
+        (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:58 71 {movqi_insn}
+     (nil))
+(insn 12 11 14 2 (set (reg:QI 45 [ D.2045 ])
+        (and:QI (reg:QI 44 [ D.2045 ])
+            (const_int -9 [0xfffffffffffffff7]))) .././main.c:58 262 {andqi3}
+     (expr_list:REG_DEAD (reg:QI 44 [ D.2045 ])
+        (nil)))
+(insn 14 12 16 2 (set (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 45 [ D.2045 ])) .././main.c:58 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 45 [ D.2045 ])
+        (nil)))
+(insn 16 14 17 2 (set (reg:QI 46 [ D.2045 ])
+        (mem/v:QI (const_int 55 [0x37]) [0 MEM[(volatile unsigned char *)55B]+0 S1 A8])) .././main.c:59 71 {movqi_insn}
+     (nil))
+(insn 17 16 19 2 (set (reg:QI 47 [ D.2045 ])
+        (and:QI (reg:QI 46 [ D.2045 ])
+            (const_int -5 [0xfffffffffffffffb]))) .././main.c:59 262 {andqi3}
+     (expr_list:REG_DEAD (reg:QI 46 [ D.2045 ])
+        (nil)))
+(insn 19 17 21 2 (set (mem/v:QI (const_int 55 [0x37]) [0 MEM[(volatile unsigned char *)55B]+0 S1 A8])
+        (reg:QI 47 [ D.2045 ])) .././main.c:59 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 47 [ D.2045 ])
+        (nil)))
+(insn 21 19 22 2 (set (reg:QI 48 [ D.2045 ])
+        (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:62 71 {movqi_insn}
+     (nil))
+(insn 22 21 24 2 (set (reg:QI 49 [ D.2045 ])
+        (ior:QI (reg:QI 48 [ D.2045 ])
+            (const_int 32 [0x20]))) .././main.c:62 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 48 [ D.2045 ])
+        (nil)))
+(insn 24 22 26 2 (set (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 49 [ D.2045 ])) .././main.c:62 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 49 [ D.2045 ])
+        (nil)))
+(insn 26 24 27 2 (set (reg:QI 50 [ D.2045 ])
+        (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:63 71 {movqi_insn}
+     (nil))
+(insn 27 26 29 2 (set (reg:QI 51 [ D.2045 ])
+        (ior:QI (reg:QI 50 [ D.2045 ])
+            (const_int 64 [0x40]))) .././main.c:63 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 50 [ D.2045 ])
+        (nil)))
+(insn 29 27 31 2 (set (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 51 [ D.2045 ])) .././main.c:63 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 51 [ D.2045 ])
+        (nil)))
+(insn 31 29 32 2 (set (reg:QI 52 [ D.2045 ])
+        (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])) .././main.c:64 71 {movqi_insn}
+     (nil))
+(insn 32 31 34 2 (set (reg:QI 53 [ D.2045 ])
+        (ior:QI (reg:QI 52 [ D.2045 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:64 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 52 [ D.2045 ])
+        (nil)))
+(insn 34 32 0 2 (set (mem/v:QI (const_int 49 [0x31]) [0 MEM[(volatile unsigned char *)49B]+0 S1 A8])
+        (reg:QI 53 [ D.2045 ])) .././main.c:64 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 53 [ D.2045 ])
+        (nil)))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+;; lr  out 	 28 [r28] 32 [__SP_L__] 34 [argL]
+
+
+;; Function main (main, funcdef_no=23, decl_uid=1949, cgraph_uid=23, symbol_order=23) (executed once)
+
+
+
+main
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 26 [r26] 27 [r27] 30 [r30] 31 [r31] 33 [__SP_H__] 35 [argH]
+;;  hardware regs used 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  regular block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  eh block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  entry block defs 	 2 [r2] 8 [r8] 9 [r9] 10 [r10] 11 [r11] 12 [r12] 13 [r13] 14 [r14] 15 [r15] 16 [r16] 17 [r17] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  exit block uses 	 24 [r24] 25 [r25] 28 [r28] 32 [__SP_L__]
+;;  regs ever live 	 32[__SP_L__]
+;;  ref usage 	r0={2d} r1={2d} r2={1d} r8={1d} r9={1d} r10={1d} r11={1d} r12={1d} r13={1d} r14={1d} r15={1d} r16={1d} r17={1d} r18={3d} r19={3d} r20={3d} r21={3d} r22={3d} r23={3d} r24={3d,1u} r25={3d,1u} r26={2d} r27={2d} r28={1d,3u} r30={2d} r31={2d} r32={1d,5u} r33={2d} r34={1d,2u} r35={2d} 
+;;    total ref usage 66{54d,12u,0e} in 3{1 regular + 2 call} insns.
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 1, maybe hot
+;;  prev block 0, next block 3, flags: (RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u0(28){ }u1(32){ }u2(34){ }}
+;; lr  in  	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  use 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  def 	 0 [r0] 1 [r1] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 26 [r26] 27 [r27] 30 [r30] 31 [r31] 33 [__SP_H__] 35 [argH]
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(call_insn 5 2 6 2 (parallel [
+            (call (mem:HI (symbol_ref:HI ("DIO_init") [flags 0x3]  <function_decl 00000000060761b0 DIO_init>) [0 DIO_init S2 A8])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+        ]) .././main.c:69 434 {call_insn}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (nil))
+(call_insn 6 5 8 2 (parallel [
+            (call (mem:HI (symbol_ref:HI ("EXTI_init") [flags 0x3]  <function_decl 0000000006076000 EXTI_init>) [0 EXTI_init S2 A8])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+        ]) .././main.c:70 434 {call_insn}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (nil))
+;;  succ:       3 [100.0%]  (FALLTHRU)
+;; lr  out 	 28 [r28] 32 [__SP_L__] 34 [argL]
+
+;; basic block 3, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 2, next block 1, flags: (RTL, MODIFIED)
+;;  pred:       2 [100.0%]  (FALLTHRU)
+;;              3 [100.0%] 
+;; bb 3 artificial_defs: { }
+;; bb 3 artificial_uses: { u5(28){ }u6(32){ }u7(34){ }}
+;; lr  in  	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  use 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  def 	
+(code_label 8 6 7 3 4 "" [1 uses])
+(note 7 8 15 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 15 7 16 3 (set (pc)
+        (label_ref 8)) -1
+     (nil)
+ -> 8)
+;;  succ:       3 [100.0%] 
+;; lr  out 	 28 [r28] 32 [__SP_L__] 34 [argL]
+
+(barrier 16 15 0)
+
+;; Function __vector_1 (__vector_1, funcdef_no=24, decl_uid=1953, cgraph_uid=24, symbol_order=24)
+
+
+
+__vector_1
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 26 [r26] 27 [r27] 30 [r30] 31 [r31] 33 [__SP_H__] 35 [argH]
+;;  hardware regs used 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  regular block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  eh block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  entry block defs 	 2 [r2] 8 [r8] 9 [r9] 10 [r10] 11 [r11] 12 [r12] 13 [r13] 14 [r14] 15 [r15] 16 [r16] 17 [r17] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  exit block uses 	 28 [r28] 32 [__SP_L__]
+;;  regs ever live 	
+;;  ref usage 	r2={1d} r8={1d} r9={1d} r10={1d} r11={1d} r12={1d} r13={1d} r14={1d} r15={1d} r16={1d} r17={1d} r18={1d} r19={1d} r20={1d} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r28={1d,2u} r32={1d,2u} r34={1d,1u} r42={1d,1u} r43={1d,1u} r44={1d,1u} r45={1d,1u} 
+;;    total ref usage 35{26d,9u,0e} in 15{15 regular + 0 call} insns.
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u0(28){ }u1(32){ }u2(34){ }}
+;; lr  in  	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  use 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  def 	 42 43 44 45
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 2 7 2 (set (reg:QI 42 [ D.2046 ])
+        (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:78 71 {movqi_insn}
+     (nil))
+(insn 7 6 9 2 (set (reg:QI 43 [ D.2046 ])
+        (ior:QI (reg:QI 42 [ D.2046 ])
+            (const_int 32 [0x20]))) .././main.c:78 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 42 [ D.2046 ])
+        (nil)))
+(insn 9 7 10 2 (set (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2046 ])) .././main.c:78 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 43 [ D.2046 ])
+        (nil)))
+(debug_insn 10 9 11 2 (var_location:SF __ms (const_double:SF 1.0e+3 [0x0.fap+10])) .././main.c:78 -1
+     (nil))
+(debug_insn 11 10 12 2 (var_location:SF __tmp (const_double:SF 1.0e+6 [0x0.f424p+20])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:SI __ticks_dc (const_int 1000000 [0xf4240])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 464 {delay_cycles_3}
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 485 {*nopv}
+     (nil))
+(insn 15 14 16 2 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 485 {*nopv}
+     (nil))
+(debug_insn 16 15 17 2 (var_location:SF __ms (clobber (const_int 0 [0]))) .././main.c:79 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:SI __ticks_dc (clobber (const_int 0 [0]))) .././main.c:79 -1
+     (nil))
+(debug_insn 18 17 20 2 (var_location:SF __tmp (clobber (const_int 0 [0]))) .././main.c:79 -1
+     (nil))
+(insn 20 18 21 2 (set (reg:QI 44 [ D.2046 ])
+        (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:80 71 {movqi_insn}
+     (nil))
+(insn 21 20 23 2 (set (reg:QI 45 [ D.2046 ])
+        (and:QI (reg:QI 44 [ D.2046 ])
+            (const_int -33 [0xffffffffffffffdf]))) .././main.c:80 262 {andqi3}
+     (expr_list:REG_DEAD (reg:QI 44 [ D.2046 ])
+        (nil)))
+(insn 23 21 0 2 (set (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2046 ])) .././main.c:80 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 45 [ D.2046 ])
+        (nil)))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+;; lr  out 	 28 [r28] 32 [__SP_L__] 34 [argL]
+
+
+;; Function __vector_2 (__vector_2, funcdef_no=25, decl_uid=1958, cgraph_uid=25, symbol_order=25)
+
+
+
+__vector_2
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 26 [r26] 27 [r27] 30 [r30] 31 [r31] 33 [__SP_H__] 35 [argH]
+;;  hardware regs used 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  regular block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  eh block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  entry block defs 	 2 [r2] 8 [r8] 9 [r9] 10 [r10] 11 [r11] 12 [r12] 13 [r13] 14 [r14] 15 [r15] 16 [r16] 17 [r17] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  exit block uses 	 28 [r28] 32 [__SP_L__]
+;;  regs ever live 	
+;;  ref usage 	r2={1d} r8={1d} r9={1d} r10={1d} r11={1d} r12={1d} r13={1d} r14={1d} r15={1d} r16={1d} r17={1d} r18={1d} r19={1d} r20={1d} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r28={1d,2u} r32={1d,2u} r34={1d,1u} r42={1d,1u} r43={1d,1u} r44={1d,1u} r45={1d,1u} 
+;;    total ref usage 35{26d,9u,0e} in 15{15 regular + 0 call} insns.
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u0(28){ }u1(32){ }u2(34){ }}
+;; lr  in  	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  use 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  def 	 42 43 44 45
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 2 7 2 (set (reg:QI 42 [ D.2047 ])
+        (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:84 71 {movqi_insn}
+     (nil))
+(insn 7 6 9 2 (set (reg:QI 43 [ D.2047 ])
+        (ior:QI (reg:QI 42 [ D.2047 ])
+            (const_int 64 [0x40]))) .././main.c:84 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 42 [ D.2047 ])
+        (nil)))
+(insn 9 7 10 2 (set (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2047 ])) .././main.c:84 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 43 [ D.2047 ])
+        (nil)))
+(debug_insn 10 9 11 2 (var_location:SF __ms (const_double:SF 1.0e+3 [0x0.fap+10])) .././main.c:84 -1
+     (nil))
+(debug_insn 11 10 12 2 (var_location:SF __tmp (const_double:SF 1.0e+6 [0x0.f424p+20])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:SI __ticks_dc (const_int 1000000 [0xf4240])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 464 {delay_cycles_3}
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 485 {*nopv}
+     (nil))
+(insn 15 14 16 2 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 485 {*nopv}
+     (nil))
+(debug_insn 16 15 17 2 (var_location:SF __ms (clobber (const_int 0 [0]))) .././main.c:85 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:SI __ticks_dc (clobber (const_int 0 [0]))) .././main.c:85 -1
+     (nil))
+(debug_insn 18 17 20 2 (var_location:SF __tmp (clobber (const_int 0 [0]))) .././main.c:85 -1
+     (nil))
+(insn 20 18 21 2 (set (reg:QI 44 [ D.2047 ])
+        (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:86 71 {movqi_insn}
+     (nil))
+(insn 21 20 23 2 (set (reg:QI 45 [ D.2047 ])
+        (and:QI (reg:QI 44 [ D.2047 ])
+            (const_int -65 [0xffffffffffffffbf]))) .././main.c:86 262 {andqi3}
+     (expr_list:REG_DEAD (reg:QI 44 [ D.2047 ])
+        (nil)))
+(insn 23 21 0 2 (set (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2047 ])) .././main.c:86 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 45 [ D.2047 ])
+        (nil)))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+;; lr  out 	 28 [r28] 32 [__SP_L__] 34 [argL]
+
+
+;; Function __vector_3 (__vector_3, funcdef_no=26, decl_uid=1963, cgraph_uid=26, symbol_order=26)
+
+
+
+__vector_3
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 26 [r26] 27 [r27] 30 [r30] 31 [r31] 33 [__SP_H__] 35 [argH]
+;;  hardware regs used 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  regular block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  eh block artificial uses 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  entry block defs 	 2 [r2] 8 [r8] 9 [r9] 10 [r10] 11 [r11] 12 [r12] 13 [r13] 14 [r14] 15 [r15] 16 [r16] 17 [r17] 18 [r18] 19 [r19] 20 [r20] 21 [r21] 22 [r22] 23 [r23] 24 [r24] 25 [r25] 28 [r28] 32 [__SP_L__] 34 [argL]
+;;  exit block uses 	 28 [r28] 32 [__SP_L__]
+;;  regs ever live 	
+;;  ref usage 	r2={1d} r8={1d} r9={1d} r10={1d} r11={1d} r12={1d} r13={1d} r14={1d} r15={1d} r16={1d} r17={1d} r18={1d} r19={1d} r20={1d} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r28={1d,2u} r32={1d,2u} r34={1d,1u} r42={1d,1u} r43={1d,1u} r44={1d,1u} r45={1d,1u} 
+;;    total ref usage 35{26d,9u,0e} in 15{15 regular + 0 call} insns.
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u0(28){ }u1(32){ }u2(34){ }}
+;; lr  in  	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  use 	 28 [r28] 32 [__SP_L__] 34 [argL]
+;; lr  def 	 42 43 44 45
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 2 7 2 (set (reg:QI 42 [ D.2048 ])
+        (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:90 71 {movqi_insn}
+     (nil))
+(insn 7 6 9 2 (set (reg:QI 43 [ D.2048 ])
+        (ior:QI (reg:QI 42 [ D.2048 ])
+            (const_int -128 [0xffffffffffffff80]))) .././main.c:90 266 {iorqi3}
+     (expr_list:REG_DEAD (reg:QI 42 [ D.2048 ])
+        (nil)))
+(insn 9 7 10 2 (set (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 43 [ D.2048 ])) .././main.c:90 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 43 [ D.2048 ])
+        (nil)))
+(debug_insn 10 9 11 2 (var_location:SF __ms (const_double:SF 1.0e+3 [0x0.fap+10])) .././main.c:90 -1
+     (nil))
+(debug_insn 11 10 12 2 (var_location:SF __tmp (const_double:SF 1.0e+6 [0x0.f424p+20])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:174 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:SI __ticks_dc (const_int 1000000 [0xf4240])) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:184 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (unspec_volatile [
+                    (const_int 199999 [0x30d3f])
+                    (const_int 3 [0x3])
+                ] UNSPECV_DELAY_CYCLES)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+            (clobber (scratch:QI))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 464 {delay_cycles_3}
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (unspec_volatile [
+                    (const_int 2 [0x2])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 485 {*nopv}
+     (nil))
+(insn 15 14 16 2 (parallel [
+            (unspec_volatile [
+                    (const_int 1 [0x1])
+                ] UNSPECV_NOP)
+            (set (mem/v:BLK (scratch:HI) [0  A8])
+                (unspec_volatile:BLK [
+                        (mem/v:BLK (scratch:HI) [0  A8])
+                    ] UNSPECV_MEMORY_BARRIER))
+        ]) c:\program files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:187 485 {*nopv}
+     (nil))
+(debug_insn 16 15 17 2 (var_location:SF __ms (clobber (const_int 0 [0]))) .././main.c:91 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:SI __ticks_dc (clobber (const_int 0 [0]))) .././main.c:91 -1
+     (nil))
+(debug_insn 18 17 20 2 (var_location:SF __tmp (clobber (const_int 0 [0]))) .././main.c:91 -1
+     (nil))
+(insn 20 18 21 2 (set (reg:QI 44 [ D.2048 ])
+        (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])) .././main.c:92 71 {movqi_insn}
+     (nil))
+(insn 21 20 23 2 (set (reg:QI 45 [ D.2048 ])
+        (and:QI (reg:QI 44 [ D.2048 ])
+            (const_int 127 [0x7f]))) .././main.c:92 262 {andqi3}
+     (expr_list:REG_DEAD (reg:QI 44 [ D.2048 ])
+        (nil)))
+(insn 23 21 0 2 (set (mem/v:QI (const_int 50 [0x32]) [0 MEM[(volatile unsigned char *)50B]+0 S1 A8])
+        (reg:QI 45 [ D.2048 ])) .././main.c:92 71 {movqi_insn}
+     (expr_list:REG_DEAD (reg:QI 45 [ D.2048 ])
+        (nil)))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+;; lr  out 	 28 [r28] 32 [__SP_L__] 34 [argL]
+
