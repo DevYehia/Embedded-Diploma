@@ -2,7 +2,7 @@
  * main.c
  *
  * Created: 4/10/2024 11:59:56 PM
- *  Author: user
+ *  Author: Prof Yehia
  */ 
 #include <stdio.h>
 //bitwise Macros
