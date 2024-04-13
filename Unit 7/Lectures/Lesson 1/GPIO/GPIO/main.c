@@ -4,7 +4,7 @@
  * Created: 4/10/2024 11:59:56 PM
  *  Author: Prof Yehia
  */ 
-#include <stdio.h>
+
 //bitwise Macros
 #define SET_BIT(reg,bit) (reg |= (1<<bit))
 #define CLR_BIT(reg,bit) (reg &= ~(1<<bit))
