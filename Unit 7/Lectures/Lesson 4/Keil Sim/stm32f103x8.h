@@ -53,10 +53,10 @@ typedef struct{
     uint8_t RESERVED[96];
     volatile uint32_t ICER[8];    
     volatile uint32_t ISPR[8];    
-    uint8_t RESERVED[96];
+    uint8_t RESERVED2[96];
     volatile uint32_t ICPR[8];
     volatile uint32_t IABR[8];
-    uint8_t RESERVED[224];
+    uint8_t RESERVED3[224];
     volatile uint32_t IPRIO[60];        
 } NVIC_t;
 

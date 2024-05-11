@@ -1,0 +1,2 @@
+./objects/exti.o: MCAL\exti.c MCAL\exti.h ..\Keil\ Sim\stm32f103x8.h \
+  C:\Keil_v5\ARM\ARMCLANG\include\stdint.h MCAL\gpio.h UTIL\bitwise.h

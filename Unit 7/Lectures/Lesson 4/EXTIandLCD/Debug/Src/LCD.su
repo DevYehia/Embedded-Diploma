@@ -1,0 +1,7 @@
+LCD.c:14:13:delay_ms	24	static
+LCD.c:21:6:LCD_init	16	static
+LCD.c:52:6:LCD_send_command	16	static
+LCD.c:64:6:LCD_wait_till_free	16	static
+LCD.c:93:6:LCD_send_char	16	static
+LCD.c:114:6:LCD_send_string	16	static
+LCD.c:121:6:LCD_GOTO_XY	16	static
