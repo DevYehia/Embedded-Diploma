@@ -1622,7 +1622,7 @@ void myCallback(void){
 	LCD_send_string("Hello There");
  8000bb4:	4802      	ldr	r0, [pc, #8]	; (8000bc0 <myCallback+0x10>)
  8000bb6:	f7ff fc01 	bl	80003bc <LCD_send_string>
-	//GPIO_write_pin(GPIOB, 0, LOGIC_HIGH);
+
 }
  8000bba:	bf00      	nop
  8000bbc:	bd80      	pop	{r7, pc}
@@ -1652,8 +1652,6 @@ int main(void)
  8000be0:	6193      	str	r3, [r2, #24]
 	LCD_init();
  8000be2:	f7ff fae1 	bl	80001a8 <LCD_init>
-	//GPIO_config_t config = {PIN0,O_PUSH_PULL,MAX_10_MHZ};
-	//GPIO_init(GPIOB, &config);
 	EXTI_config_t conf = {EXTI_GPIOB,PIN9,RISING_EDGE,ENABLE,myCallback};
  8000be6:	4a06      	ldr	r2, [pc, #24]	; (8000c00 <main+0x3c>)
  8000be8:	463b      	mov	r3, r7
