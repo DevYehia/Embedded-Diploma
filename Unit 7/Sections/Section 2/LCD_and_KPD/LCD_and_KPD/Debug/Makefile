@@ -37,6 +37,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../KEYPAD.c \
 ../LCD.c \
 ../main.c
 
@@ -48,18 +49,22 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+KEYPAD.o \
 LCD.o \
 main.o
 
 OBJS_AS_ARGS +=  \
+KEYPAD.o \
 LCD.o \
 main.o
 
 C_DEPS +=  \
+KEYPAD.d \
 LCD.d \
 main.d
 
 C_DEPS_AS_ARGS +=  \
+KEYPAD.d \
 LCD.d \
 main.d
 
@@ -77,6 +82,13 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+./KEYPAD.o: .././KEYPAD.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.36
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -gdwarf-2 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 ./LCD.o: .././LCD.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36

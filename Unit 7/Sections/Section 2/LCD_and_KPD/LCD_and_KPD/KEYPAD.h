@@ -2,25 +2,28 @@
 #define KEYPAD_H
 
 #include <stdint.h>
-#include "gpio.h"
+#include <avr/io.h>
+#include "bitwise.h"
 
 #define ROW_SIZE 4
 #define COL_SIZE 4
 
-#define ROW_PORT GPIOB
-#define COL_PORT GPIOB
+#define ROW_PORT PORTD
+#define ROW_DIR  DDRD
+#define ROW_PIN  PIND	
+#define COL_PORT PORTD	
+#define COL_DIR  DDRD	
 
 
+#define R0 0
+#define R1 1
+#define R2 2
+#define R3 3
 
-#define R0 PIN0
-#define R1 PIN1
-#define R2 PIN3
-#define R3 PIN4
-
-#define C0 PIN8
-#define C1 PIN7
-#define C2 PIN6
-#define C3 PIN5
+#define C0 4
+#define C1 5
+#define C2 6
+#define C3 7
 
 
 
