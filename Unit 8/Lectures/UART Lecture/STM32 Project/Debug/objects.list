@@ -1,0 +1,7 @@
+"MCAL/gpio.o"
+"MCAL/rcc.o"
+"MCAL/usart.o"
+"Src/main.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Startup/startup_stm32f103c6tx.o"

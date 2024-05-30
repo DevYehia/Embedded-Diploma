@@ -1,10 +1,9 @@
 #ifndef GPIO_H
 #define GPIO_H
 
-
 //-----------------------------
 //Includes
-#include "../Device Header/stm32f103x8.h"
+#include "stm32f103x8.h"
 //-----------------------------
 
 
