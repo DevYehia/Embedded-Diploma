@@ -22,6 +22,7 @@
 
 #define SPI1_IRQ    35
 #define SPI2_IRQ    36
+
 //Base Addresses for Cortex-M Periphrals
 #define NVIC_BASE  0xE000E100
 
@@ -244,6 +245,14 @@ typedef struct
 
 #define RESET_SPI2() RCC->APB1RSTR |=  (1 << 14); \
                      RCC->APB1RSTR &=  ~(1 << 14) 
+
+//-*-*-*-*-*-*-*-*-*-*-*-
+//NVIC interrupt Macros:
+//-*-*-*-*-*-*-*-*-*-*-*
+#define ENABLE_SPI1_IRQ()   NVIC->ISER[1] |= (1 <<(SPI1_IRQ - 32))
+#define ENABLE_SPI2_IRQ()   NVIC->ISER[1] |= (1 << (SPI2_IRQ - 32))
+#define DISABLE_SPI1_IRQ()  NVIC->ICER[1] |= (1 <<(SPI1_IRQ - 32))
+#define DISABLE_SPI2_IRQ()  NVIC->ICER[1] |= (1 << (SPI2_IRQ - 32))
 //-*-*-*-*-*-*-*-*-*-*-*-
 //Generic Macros:
 //-*-*-*-*-*-*-*-*-*-*-*

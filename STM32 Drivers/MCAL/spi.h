@@ -2,6 +2,16 @@
 #define SPI_H
 
 #include "../Device Header/stm32f103x8.h"
+#include "../UTIL/bitwise.h"
+
+//Interrupt Source Struct
+typedef struct{
+    uint8_t TXE:1;
+    uint8_t RXNE:1;     
+    uint8_t ERR:1;
+    uint8_t RESERVED:5;
+} SPI_int_src;
+
 
 //Configuration Struct
 typedef struct{
@@ -14,10 +24,14 @@ typedef struct{
     uint16_t slave_select_mode; //specifies hardware mode or software mode for slave select @ref SPI_SS_MODES
     uint16_t baud_rate_prescaler; //@ref SPI_BR_PRESCALERS
 
-    uint8_t IRQ_enable;
+    uint8_t IRQ_enable; //Select which interrupt to enable, to enable multiple interrupt types at the same time, use bitwise or between them
+                        //Example: SPI_TXE_INT_ENABLE | SPI_RXNE_INT_ENABLE, @ref SPI_INTERRUPT_TYPES_ENABLE
 
+    void (* callback)(SPI_int_src *) //Callback function to be called, MUST take SPI_int_src pointer as parameter to tell the application what caused the interrupt
 
 } SPI_config_t;
+
+typedef enum {POLL, NO_POLL} poll_mode;
 
 #define SPI_ENABLE (1U << 6)
 
@@ -66,6 +80,12 @@ typedef struct{
 #define SPI_DIV_BY_128  (0b110 << 3)
 #define SPI_DIV_BY_256  (0b111 << 3)
 
+//SPI_INTERRUPT_TYPES_ENABLE
+#define SPI_NO_INT_ENABLE   0x0000
+#define SPI_TXE_INT_ENABLE  (1U << 7)
+#define SPI_RXNE_INT_ENABLE (1U << 6)
+#define SPI_ERR_INT_ENABLE  (1U << 5)
+
 
 //Initializes the SPI
 //Inputs:
@@ -81,6 +101,22 @@ void SPI_init(SPI_t* spi ,SPI_config_t* conf);
 //Outputs: None
 void SPI_deInit(SPI_t* spi);
 
+
+//Send data on SPI and can choose to poll on sending or not
+//Inputs:
+//1) spi: pointer to the SPI being used, Ex: SPI1
+//2) data: the data being sent
+//3) poll: choose whether to poll or not 
+//Outputs: None
+void SPI_send_data(SPI_t* spi, uint16_t data,poll_mode poll_choice);
+
+
+//Receive data on SPI and can choose to poll on receiving or not
+//Inputs:
+//1) spi: pointer to the SPI being used, Ex: SPI1
+//2) poll: choose whether to poll or not 
+//Outputs: data received
+uint16_t SPI_receive_data(SPI_t* spi, poll_mode poll_choice);
 
 
 
