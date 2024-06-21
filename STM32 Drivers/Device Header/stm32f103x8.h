@@ -228,14 +228,22 @@ typedef struct
 //-*-*-*-*-*-*-*-*-*-*-*-
 //clock enable Macros:
 //-*-*-*-*-*-*-*-*-*-*-*
-#define  ENABLE_AFIO()  (RCC->APB2ENR |= (1 << 0))
-#define  ENABLE_GPIOA() (RCC->APB2ENR |= (1 << 2))
-#define  ENABLE_GPIOB() (RCC->APB2ENR |= (1 << 3))
-#define  ENABLE_GPIOC() (RCC->APB2ENR |= (1 << 4))
-#define  ENABLE_GPIOD() (RCC->APB2ENR |= (1 << 5))
-#define  ENABLE_GPIOE() (RCC->APB2ENR |= (1 << 6))
-#define  ENABLE_USART(usartNo)  if(usartNo == 1) RCC->APB2ENR |= (1 << 14); \
+#define ENABLE_AFIO()  (RCC->APB2ENR |= (1 << 0))
+#define ENABLE_GPIOA() (RCC->APB2ENR |= (1 << 2))
+#define ENABLE_GPIOB() (RCC->APB2ENR |= (1 << 3))
+#define ENABLE_GPIOC() (RCC->APB2ENR |= (1 << 4))
+#define ENABLE_GPIOD() (RCC->APB2ENR |= (1 << 5))
+#define ENABLE_GPIOE() (RCC->APB2ENR |= (1 << 6))
+#define ENABLE_USART(usartNo)  if(usartNo == 1) RCC->APB2ENR |= (1 << 14); \
                                 else if(usartNo <= 5 && usartNo >= 2) RCC->APB1ENR |= (1 << (usartNo + 15));
+#define CLK_ENABLE_SPI1() RCC->APB2ENR |= (1 << 12)
+#define CLK_ENABLE_SPI2() RCC->APB1ENR |= (1 << 14)
+
+#define RESET_SPI1() RCC->APB2RSTR |=  (1 << 12); \
+                     RCC->APB2RSTR &=  ~(1 << 12)
+
+#define RESET_SPI2() RCC->APB1RSTR |=  (1 << 14); \
+                     RCC->APB1RSTR &=  ~(1 << 14) 
 //-*-*-*-*-*-*-*-*-*-*-*-
 //Generic Macros:
 //-*-*-*-*-*-*-*-*-*-*-*
