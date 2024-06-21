@@ -24,6 +24,12 @@
 #include "../MCAL/usart.h"
 #include "../MCAL/gpio.h"
 
+
+void myHandler(void){
+	uint16_t c = UART_receive_data(USART1, NO_POLL);
+	UART_send_data(USART1, c, NO_POLL);
+}
+
 int main(void)
 {
 	ENABLE_GPIOA();
@@ -33,12 +39,13 @@ int main(void)
 	conf.pinNo = PIN10;
 	conf.pinMode = I_FLOATING;
 	GPIO_init(GPIOA, &conf);
-	UART_config_t config = {9600, ASYNC_MODE, NO_PARITY, ONE_STOP, EIGHT_BIT_CHAR, ENABLE_RX_TX, 0};
+	UART_config_t config = {9600, ASYNC_MODE, NO_PARITY, ONE_STOP, EIGHT_BIT_CHAR, ENABLE_RX_TX, RXNE_ENABLE};
 	UART_init(USART1, &config);
+	UART_set_callback(myHandler, USART1);
 	//conf.pin
     /* Loop forever */
 	for(;;){
-		uint16_t c = UART_receive_data(USART1, POLL);
-		UART_send_data(USART1, c, POLL);
+		//uint16_t c = UART_receive_data(USART1, POLL);
+		//UART_send_data(USART1, c, POLL);
 	}
 }

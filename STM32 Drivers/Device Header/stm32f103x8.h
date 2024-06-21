@@ -20,6 +20,8 @@
 #define UART4_IRQ   52
 #define UART5_IRQ   53
 
+#define SPI1_IRQ    35
+#define SPI2_IRQ    36
 //Base Addresses for Cortex-M Periphrals
 #define NVIC_BASE  0xE000E100
 
@@ -34,6 +36,8 @@
 #define USART3_BASE   0x40004800UL
 #define UART4_BASE    0x40004C00UL
 #define UART5_BASE    0x40005000UL
+
+#define SPI2_BASE      0x40003800
 
 
 //APB2 Periphrals
@@ -55,6 +59,8 @@
 
 #define AFIO_BASE     (PERIPHRALS_START + 0x00010000UL)
 #define EXTI_BASE     (PERIPHRALS_START + 0x00010400UL)
+
+#define SPI1_BASE      0x40013000
 
 //End of BUS Periphrals
 //---------------------------------
@@ -151,6 +157,22 @@ typedef struct
     volatile uint32_t GTPR;     
 } USART_t;
 
+//-*-*-*-*-*-*-*-*-*-*-*-
+//Peripheral registers: SPI
+//-*-*-*-*-*-*-*-*-*-*-*
+typedef struct 
+{
+    volatile uint32_t CR1; 
+    volatile uint32_t CR2;
+    volatile uint32_t SR;
+    volatile uint32_t DR;
+    volatile uint32_t CRCPR;
+    volatile uint32_t RXCRCR;      
+    volatile uint32_t TXCRCR;
+    volatile uint32_t I2SCFGR;
+    volatile uint32_t I2SPR;         
+} SPI_t;
+
 
 //End of Bus Periphrals Registers
 //---------------------------------
@@ -192,6 +214,13 @@ typedef struct
 #define USART3  ((USART_t *)(USART3_BASE))
 #define UART4   ((USART_t *)(UART4_BASE))
 #define UART5   ((USART_t *)(UART5_BASE))
+
+//-*-*-*-*-*-*-*-*-*-*-*-
+//Peripheral Instants: SPI
+//-*-*-*-*-*-*-*-*-*-*-*
+#define SPI1 ((SPI_t *)(SPI1_BASE))
+#define SPI2 ((SPI_t *)(SPI2_BASE))
+
 
 //End of Periphrals Instants
 //---------------------------------

@@ -12,37 +12,7 @@
 							 usart == UART4  ? UART4_IRQ : \
 							 usart == UART5  ? UART5_IRQ : -1
 
-#define USART_HANDLER(usartNo) \
-void USART##usartNo##_IRQHandler(){ \
-	if(GET_BIT(USART##usartNo->SR,7) == 1){ \
-		USART_TXE_callbacks[usartNo-1](); \
-	} \
-	else if(GET_BIT(USART##usartNo->SR,6) == 1){ \
-		USART_TC_callbacks[usartNo-1]();	\
-	    CLR_BIT(USART##usartNo->SR,6);                                \
-	} \
-	else if(GET_BIT(USART##usartNo->SR,5) == 1){ \
-		USART_RXNE_callbacks[usartNo - 1](); \
-	} \
-}  
-
-#define UART_HANDLER(usartNo) \
-void UART##usartNo##_IRQHandler(){ \
-	if(GET_BIT(UART##usartNo->SR,7) == 1){ \
-		USART_TXE_callbacks[usartNo-1](); \
-	} \
-	else if(GET_BIT(UART##usartNo->SR,6) == 1){ \
-		USART_TC_callbacks[usartNo-1]();	\
-	    CLR_BIT(UART##usartNo->SR,6);                                \
-	} \
-	else if(GET_BIT(UART##usartNo->SR,5) == 1){ \
-		USART_RXNE_callbacks[usartNo - 1](); \
-	} \
-}  
-
-void (*USART_TXE_callbacks[5])(void);
-void (*USART_TC_callbacks[5])(void);
-void (*USART_RXNE_callbacks[5])(void);
+void (*USART_callback)(void);
 static uint8_t payload_length = -1;
 static uint8_t isParityEnabled = 0;
 
@@ -153,19 +123,11 @@ void UART_init(USART_t* usart ,UART_config_t* config){
 }
 
 
-void UART_set_TXE_callback(void (*func)(void),USART_t* usart){
-	USART_TXE_callbacks[getUsartNo(usart)] = func;
+void UART_set_callback(void (*func)(void),USART_t* usart){
+	USART_callback = func;
 }
 
 
-void UART_set_TC_callback(void (*func)(void),USART_t* usart){
-	USART_TC_callbacks[getUsartNo(usart)] = func;
-}
-
-
-void UART_set_RXNE_callback(void (*func)(void),USART_t* usart){
-	USART_RXNE_callbacks[getUsartNo(usart)] = func;
-}
 
 void UART_send_data(USART_t* usart, uint16_t data, uint8_t poll){
 	if(poll != NO_POLL){
@@ -197,8 +159,23 @@ uint16_t UART_receive_data(USART_t* usart, uint8_t poll){
 
 
 
-USART_HANDLER(1)
-USART_HANDLER(2)
-USART_HANDLER(3)
-UART_HANDLER(4)
-UART_HANDLER(5)
+
+void USART1_IRQHandler(){
+	USART_callback();
+}
+
+void USART2_IRQHandler(){
+	USART_callback();
+}
+
+void USART3_IRQHandler(){
+	USART_callback();
+}
+
+void UART4_IRQHandler(){
+	USART_callback();
+}
+
+void UART5_IRQHandler(){
+	USART_callback();
+}
