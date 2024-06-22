@@ -3,6 +3,7 @@
 
 #include "../Device Header/stm32f103x8.h"
 #include "../UTIL/bitwise.h"
+#include "gpio.h"
 
 //Interrupt Source Struct
 typedef struct{
@@ -88,6 +89,7 @@ typedef enum {POLL, NO_POLL} poll_mode;
 
 
 //Initializes the SPI
+//Note: Can only support Full Duplex
 //Inputs:
 //1) spi: pointer to the SPI being used, Ex: SPI1
 //2) conf: pointer to SPI configuration struct 
@@ -101,6 +103,12 @@ void SPI_init(SPI_t* spi ,SPI_config_t* conf);
 //Outputs: None
 void SPI_deInit(SPI_t* spi);
 
+//Configures the GPIO pins to match configuration set by user
+//Note: MUST only be called after SPI_init
+//Inputs:
+//1) spi: pointer to the SPI being used, Ex: SPI1
+//Outputs: None
+void SPI_set_GPIO(SPI_t* spi);
 
 //Send data on SPI and can choose to poll on sending or not
 //Inputs:
