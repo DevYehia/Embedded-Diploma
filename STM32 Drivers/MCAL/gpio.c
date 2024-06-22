@@ -15,6 +15,24 @@ void GPIO_init(GPIO_t* GPIOx,GPIO_config_t* config){
     if(config->pinNo > MAX_PIN){ //Invalid Pin No.
         return;
     }
+
+    //Enable GPIO Clock
+    if(GPIOx == GPIOA){
+        ENABLE_GPIOA();
+    }
+    else if(GPIOx == GPIOB){
+        ENABLE_GPIOB();
+    } 
+    else if(GPIOx == GPIOC){
+        ENABLE_GPIOC();
+    }    
+    else if(GPIOx == GPIOD){
+        ENABLE_GPIOD();
+    }    
+    else if(GPIOx == GPIOE){
+        ENABLE_GPIOE();
+    }       
+    
     volatile uint32_t* CR_reg = GET_CR(config->pinNo,GPIOx);
     for(int i = 0 ; i < 4 ; i++){ //Clear the 4-bits of the pin configuration
         CLR_BIT(*CR_reg, GET_CR_LSB(config->pinNo) + i);
