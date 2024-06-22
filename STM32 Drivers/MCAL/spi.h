@@ -127,6 +127,14 @@ void SPI_send_data(SPI_t* spi, uint16_t data,poll_mode poll_choice);
 uint16_t SPI_receive_data(SPI_t* spi, poll_mode poll_choice);
 
 
+//Send data on SPI and then receives and can choose to poll on sending or not
+//Inputs:
+//1) spi: pointer to the SPI being used, Ex: SPI1
+//2) data: the data being sent
+//3) poll: choose whether to poll or not 
+//Outputs: data received
+uint16_t SPI_send_and_receive_data(SPI_t* spi, uint16_t data,poll_mode poll_choice);
+
 
 
 

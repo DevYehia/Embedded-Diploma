@@ -207,6 +207,11 @@ uint16_t SPI_receive_data(SPI_t* spi, poll_mode poll_choice){
     return spi->DR;           
 }
 
+uint16_t SPI_send_and_receive_data(SPI_t* spi, uint16_t data,poll_mode poll_choice){
+    SPI_send_data(spi,data,poll_choice);
+    return SPI_receive_data(spi,poll_choice);
+}
+
 //ISRs
 void SPI1_IRQHandler(void){
     SPI_int_src src;
