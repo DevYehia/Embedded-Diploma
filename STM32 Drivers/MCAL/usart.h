@@ -75,6 +75,7 @@ typedef struct{
 
 
 void UART_init(USART_t* usart ,UART_config_t* config);
+void UART_set_GPIO(USART_t* usart);
 void UART_send_data(USART_t* usart, uint16_t data, uint8_t poll);
 uint16_t UART_receive_data(USART_t* usart, uint8_t poll);
 void UART_set_callback(void (*func)(void),USART_t* usart);

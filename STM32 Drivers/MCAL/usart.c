@@ -122,6 +122,46 @@ void UART_init(USART_t* usart ,UART_config_t* config){
 
 }
 
+void UART_set_GPIO(USART_t* usart){
+    GPIO_config_t conf;
+    if(usart == USART1){
+        //TX on Pin B6
+        conf.pinNo = PIN6; 
+        conf.pinMode = O_ALT_PUSH_PULL;
+        conf.pinSpeed = MAX_10_MHZ;
+        GPIO_init(GPIOB, &conf);
+
+        //RX on B7
+        conf.pinNo = PIN7; 
+        conf.pinMode = I_FLOATING;
+        GPIO_init(GPIOB, &conf);
+    }
+    else if(usart == USART2){
+        //TX on Pin D5
+        conf.pinNo = PIN5; 
+        conf.pinMode = O_ALT_PUSH_PULL;
+        conf.pinSpeed = MAX_10_MHZ;
+        GPIO_init(GPIOD, &conf);
+
+        //RX on D6
+        conf.pinNo = PIN6; 
+        conf.pinMode = I_FLOATING;
+        GPIO_init(GPIOD, &conf);        
+    }
+    else if(usart == USART3){
+        //TX on Pin C10
+        conf.pinNo = PIN10; 
+        conf.pinMode = O_ALT_PUSH_PULL;
+        conf.pinSpeed = MAX_10_MHZ;
+        GPIO_init(GPIOC, &conf);
+
+        //RX on C11
+        conf.pinNo = PIN11; 
+        conf.pinMode = I_FLOATING;
+        GPIO_init(GPIOC, &conf);        
+    }
+
+}
 
 void UART_set_callback(void (*func)(void),USART_t* usart){
 	USART_callbacks[getUsartNo(usart)-1] = func;
