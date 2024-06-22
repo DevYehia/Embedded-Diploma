@@ -192,11 +192,7 @@ void SPI_send_data(SPI_t* spi, uint16_t data,poll_mode poll_choice){
         while(GET_BIT(spi->SR,1) == 0);
         spi->DR = data;
     }
-    else if(poll_choice = NO_POLL){
-        if(GET_BIT(spi->SR,1) == 1){
-            spi->DR = data;            
-        }
-    }
+    spi->DR = data;          
 }
 
 uint16_t SPI_receive_data(SPI_t* spi, poll_mode poll_choice){
