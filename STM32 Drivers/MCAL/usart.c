@@ -12,7 +12,7 @@
 							 usart == UART4  ? UART4_IRQ : \
 							 usart == UART5  ? UART5_IRQ : -1
 
-void (*USART_callbacks[5])(void);
+void (*USART_callbacks[5]) (void);
 static uint8_t payload_length = -1;
 static uint8_t isParityEnabled = 0;
 
@@ -164,19 +164,20 @@ void UART_set_GPIO(USART_t* usart){
 }
 
 void UART_set_callback(void (*func)(void),USART_t* usart){
-	USART_callbacks[getUsartNo(usart)-1] = func;
+    uint8_t usartNo = getUsartNo(usart);
+	USART_callbacks[usartNo-1] = func;
 }
 
 
 
 void UART_send_data(USART_t* usart, uint16_t data, uint8_t poll){
-	if(poll != NO_POLL){
+	if(poll != USART_NO_POLL){
 		while(GET_BIT(usart->SR,7) == 0);
 	}
 	usart->DR = data;
 }
 uint16_t UART_receive_data(USART_t* usart, uint8_t poll){
-	if(poll != NO_POLL){
+	if(poll != USART_NO_POLL){
 		while(GET_BIT(usart->SR,5) == 0);
 	}	
 	if(isParityEnabled){
