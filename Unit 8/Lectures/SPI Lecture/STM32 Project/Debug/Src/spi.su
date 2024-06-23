@@ -1,0 +1,8 @@
+spi.c:7:6:SPI_init	24	static
+spi.c:83:6:SPI_deInit	16	static
+spi.c:94:6:SPI_set_GPIO	24	static
+spi.c:190:6:SPI_send_data	16	static
+spi.c:198:10:SPI_receive_data	16	static
+spi.c:206:10:SPI_send_and_receive_data	16	static
+spi.c:212:6:SPI1_IRQHandler	16	static
+spi.c:224:6:SPI2_IRQHandler	16	static

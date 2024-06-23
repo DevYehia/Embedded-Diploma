@@ -1,0 +1,10 @@
+usart.c:19:6:UART_init	40	static
+usart.c:125:6:UART_set_GPIO	24	static
+usart.c:166:6:UART_set_callback	24	static
+usart.c:173:6:UART_send_data	16	static
+usart.c:179:10:UART_receive_data	16	static
+usart.c:204:6:USART1_IRQHandler	8	static
+usart.c:208:6:USART2_IRQHandler	8	static
+usart.c:212:6:USART3_IRQHandler	8	static
+usart.c:216:6:UART4_IRQHandler	8	static
+usart.c:220:6:UART5_IRQHandler	8	static

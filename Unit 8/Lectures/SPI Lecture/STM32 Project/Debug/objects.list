@@ -1,0 +1,8 @@
+"Src/gpio.o"
+"Src/main.o"
+"Src/rcc.o"
+"Src/spi.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Src/usart.o"
+"Startup/startup_stm32f103c6tx.o"

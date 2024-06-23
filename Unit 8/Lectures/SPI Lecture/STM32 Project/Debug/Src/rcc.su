@@ -1,0 +1,4 @@
+rcc.c:9:10:RCC_Get_SYSCLK_freq	4	static
+rcc.c:19:10:RCC_Get_AHB_freq	16	static
+rcc.c:29:10:RCC_Get_APB1_freq	16	static
+rcc.c:37:10:RCC_Get_APB2_freq	16	static
