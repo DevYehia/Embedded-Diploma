@@ -214,7 +214,7 @@ void SPI1_IRQHandler(void){
     if(SPI1->SR & 0x2){ //TXE
         src.TXE = 1;
     }
-    else if(SPI1->SR & 0x1){ //RXNE
+    if(SPI1->SR & 0x1){ //RXNE
         src.RXNE = 1;
     }
     SPI1_callback(&src);
@@ -226,7 +226,7 @@ void SPI2_IRQHandler(void){
     if(SPI2->SR & 0x2){ //TXE
         src.TXE = 1;
     }
-    else if(SPI2->SR & 0x1){ //RXNE
+    if(SPI2->SR & 0x1){ //RXNE
         src.RXNE = 1;
     }
     SPI2_callback(&src);    
