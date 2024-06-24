@@ -2,14 +2,14 @@
 
 void (* SPI1_callback)(SPI_int_src *);
 void (* SPI2_callback)(SPI_int_src *);
-SPI_config_t* g_config;
+SPI_config_t g_config;
 
 void SPI_init(SPI_t* spi ,SPI_config_t* conf){
     uint16_t tmp_SPI_CR1_config = 0x0000;
     uint16_t tmp_SPI_CR2_config = 0x0000;
 
     //Save Desired Config
-    g_config = conf;
+    g_config = *conf;
 
     //Enable the SPI
     if(spi == SPI1){
@@ -96,21 +96,21 @@ void SPI_set_GPIO(SPI_t* spi){
     if(spi == SPI1){
         //set clock pin A5
         conf.pinNo = PIN5;
-        if(g_config->master_slave_mode == SPI_MASTER_MODE){
+        if(g_config.master_slave_mode == SPI_MASTER_MODE){
             conf.pinMode = O_ALT_PUSH_PULL;
             conf.pinSpeed = MAX_10_MHZ;
         }
-        else if(g_config->master_slave_mode == SPI_SLAVE_MODE){
+        else if(g_config.master_slave_mode == SPI_SLAVE_MODE){
             conf.pinMode = I_FLOATING;        
         }
         GPIO_init(GPIOA, &conf);
 
         //Set MISO Pin A6 (Can only support Full Duplex point to point)
         conf.pinNo = PIN6;
-        if(g_config->master_slave_mode == SPI_MASTER_MODE){
+        if(g_config.master_slave_mode == SPI_MASTER_MODE){
             conf.pinMode = I_FLOATING;
         }
-        else if(g_config->master_slave_mode == SPI_SLAVE_MODE){
+        else if(g_config.master_slave_mode == SPI_SLAVE_MODE){
             conf.pinMode = O_ALT_PUSH_PULL;
             conf.pinSpeed = MAX_10_MHZ;        
         }
@@ -118,21 +118,21 @@ void SPI_set_GPIO(SPI_t* spi){
 
         //Set MOSI Pin A7 (Can only support Full Duplex)
         conf.pinNo = PIN7;
-        if(g_config->master_slave_mode == SPI_MASTER_MODE){
+        if(g_config.master_slave_mode == SPI_MASTER_MODE){
             conf.pinMode = O_ALT_PUSH_PULL;
             conf.pinSpeed = MAX_10_MHZ;       
         }
-        else if(g_config->master_slave_mode == SPI_SLAVE_MODE){
+        else if(g_config.master_slave_mode == SPI_SLAVE_MODE){
             conf.pinMode = I_FLOATING;       
         }
         GPIO_init(GPIOA, &conf);
 
         //set NSS Pin A4 (configure if HW mode selected)
         conf.pinNo = PIN4;
-        if(g_config->slave_select_mode == SPI_SS_HW_SLAVE || g_config->slave_select_mode == SPI_SS_HW_MASTER_OUTPUT_DISABLED){
+        if(g_config.slave_select_mode == SPI_SS_HW_SLAVE || g_config.slave_select_mode == SPI_SS_HW_MASTER_OUTPUT_DISABLED){
             conf.pinMode = I_FLOATING;              
         }
-        else if(g_config->slave_select_mode == SPI_SS_HW_MASTER_OUTPUT_ENABLED){
+        else if(g_config.slave_select_mode == SPI_SS_HW_MASTER_OUTPUT_ENABLED){
             conf.pinMode = O_ALT_PUSH_PULL;
             conf.pinSpeed = MAX_10_MHZ;             
         }
@@ -141,21 +141,21 @@ void SPI_set_GPIO(SPI_t* spi){
     else if(spi == SPI2){
         //set clock pin B13
         conf.pinNo = PIN13;
-        if(g_config->master_slave_mode == SPI_MASTER_MODE){
+        if(g_config.master_slave_mode == SPI_MASTER_MODE){
             conf.pinMode = O_ALT_PUSH_PULL;
             conf.pinSpeed = MAX_10_MHZ;
         }
-        else if(g_config->master_slave_mode == SPI_SLAVE_MODE){
+        else if(g_config.master_slave_mode == SPI_SLAVE_MODE){
             conf.pinMode = I_FLOATING;        
         }
         GPIO_init(GPIOB, &conf);
 
         //Set MISO Pin B14 (Can only support Full Duplex point to point)
         conf.pinNo = PIN14;
-        if(g_config->master_slave_mode == SPI_MASTER_MODE){
+        if(g_config.master_slave_mode == SPI_MASTER_MODE){
             conf.pinMode = I_FLOATING;
         }
-        else if(g_config->master_slave_mode == SPI_SLAVE_MODE){
+        else if(g_config.master_slave_mode == SPI_SLAVE_MODE){
             conf.pinMode = O_ALT_PUSH_PULL;
             conf.pinSpeed = MAX_10_MHZ;        
         }
@@ -163,21 +163,21 @@ void SPI_set_GPIO(SPI_t* spi){
 
         //Set MOSI Pin B15 (Can only support Full Duplex)
         conf.pinNo = PIN15;
-        if(g_config->master_slave_mode == SPI_MASTER_MODE){
+        if(g_config.master_slave_mode == SPI_MASTER_MODE){
             conf.pinMode = O_ALT_PUSH_PULL;
             conf.pinSpeed = MAX_10_MHZ;       
         }
-        else if(g_config->master_slave_mode == SPI_SLAVE_MODE){
+        else if(g_config.master_slave_mode == SPI_SLAVE_MODE){
             conf.pinMode = I_FLOATING;       
         }
         GPIO_init(GPIOB, &conf);
 
         //set NSS Pin B12 (configure if HW mode selected)
         conf.pinNo = PIN12;
-        if(g_config->slave_select_mode == SPI_SS_HW_SLAVE || g_config->slave_select_mode == SPI_SS_HW_MASTER_OUTPUT_DISABLED){
+        if(g_config.slave_select_mode == SPI_SS_HW_SLAVE || g_config.slave_select_mode == SPI_SS_HW_MASTER_OUTPUT_DISABLED){
             conf.pinMode = I_FLOATING;              
         }
-        else if(g_config->slave_select_mode == SPI_SS_HW_MASTER_OUTPUT_ENABLED){
+        else if(g_config.slave_select_mode == SPI_SS_HW_MASTER_OUTPUT_ENABLED){
             conf.pinMode = O_ALT_PUSH_PULL;
             conf.pinSpeed = MAX_10_MHZ;             
         }
