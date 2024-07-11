@@ -25,7 +25,7 @@ void E2PROM_write_Nbytes(uint16_t memAddr, uint8_t* dataBuffer, uint16_t dataLen
     I2C_master_send(I2C_USED, E2PROM_SLAVE_ADDRESS, newBuff, dataLen + 2, STOP, NORMAL_START);
 }
 
-void E2PROM_write_Nbytes(uint16_t memAddr, uint8_t* recvBuffer, uint16_t dataLen){
+void E2PROM_read_Nbytes(uint16_t memAddr, uint8_t* recvBuffer, uint16_t dataLen){
 
     uint8_t memAddrAsBuffer[2] = {memAddr | 0xFF00, memAddr | 0x00FF};
 

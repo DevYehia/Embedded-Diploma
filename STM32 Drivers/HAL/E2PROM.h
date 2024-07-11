@@ -19,8 +19,12 @@ void E2PROM_init(void);
 //Note: dataLen shouldn't exceed MAX_BYTES_SENT
 void E2PROM_write_Nbytes(uint16_t memAddr, uint8_t* dataBuffer, uint16_t dataLen);
 
-
-void E2PROM_write_Nbytes(uint16_t memAddr, uint8_t* recvBuffer, uint16_t dataLen);
+//read N Bytes from E2PROM
+//Inputs:
+//1) Address in E2PROM to begin reading from
+//2) data buffer to store data from E2PROM
+//3) Length of data to be read in bytes
+void E2PROM_read_Nbytes(uint16_t memAddr, uint8_t* recvBuffer, uint16_t dataLen);
 
 #endif
 
