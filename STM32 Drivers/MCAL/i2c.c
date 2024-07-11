@@ -225,24 +225,11 @@ I2C_flag_status_t I2C_check_flag(I2C_t* i2c, I2C_flag_type_t flagType){
 }
 
 void I2C_send_address(I2C_t* i2c,uint16_t slaveAddr, I2C_rw_t rwChoice){
-    if(i2c == I2C1){
-        if(g_I2C1_config.slave_addr_info->addr_size == I2C_ADDR_7_BITS){
-            slaveAddr = (slaveAddr << 1) | rwChoice;
-            i2c->DR = slaveAddr;
-        }
-        else{
-            //Not Supported
-        }
-    }
-    else{
-        if(g_I2C2_config.slave_addr_info->addr_size == I2C_ADDR_7_BITS){
-            slaveAddr = (slaveAddr << 1) | rwChoice;
-            i2c->DR = slaveAddr;
-        }
-        else{
-            //Not Supported
-        }
-    }
+
+    //currently only 7-bit address is supported
+    slaveAddr = (slaveAddr << 1) | rwChoice;
+    i2c->DR = slaveAddr;
+    
 }
 
 void I2C_master_send(I2C_t* i2c, uint16_t slaveAddr, uint8_t* dataToSend, uint16_t dataLen, I2C_stop_choice_t stopChoice, I2C_start_choice_t startChoice){
