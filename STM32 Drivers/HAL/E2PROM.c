@@ -17,7 +17,7 @@ void E2PROM_init(void){
 void E2PROM_write_Nbytes(uint16_t memAddr, uint8_t* dataBuffer, uint16_t dataLen){
 
     //fill first two elements with memory Address
-    uint8_t newBuff[MAX_BYTES_SENT] = {memAddr | 0xFF00, memAddr | 0x00FF};
+    uint8_t newBuff[MAX_BYTES_SENT] = {(uint8_t)(memAddr >> 8), (uint8_t)memAddr};
 
     for(int i = 2,j = 0 ; j < dataLen ; i++,j++){
         newBuff[i] = dataBuffer[i-2];
@@ -27,7 +27,7 @@ void E2PROM_write_Nbytes(uint16_t memAddr, uint8_t* dataBuffer, uint16_t dataLen
 
 void E2PROM_read_Nbytes(uint16_t memAddr, uint8_t* recvBuffer, uint16_t dataLen){
 
-    uint8_t memAddrAsBuffer[2] = {memAddr | 0xFF00, memAddr | 0x00FF};
+    uint8_t memAddrAsBuffer[2] = {(uint8_t)(memAddr >> 8), (uint8_t)memAddr};
 
     //send E2PROM address to read from 
     I2C_master_send(I2C_USED, E2PROM_SLAVE_ADDRESS,memAddrAsBuffer, 2, NO_STOP, NORMAL_START);
