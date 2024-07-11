@@ -2,6 +2,7 @@
 #define I2C_H
 
 #include "../Device Header/stm32f103x8.h"
+#include "../UTIL/bitwise.h"
 #include "rcc.h"
 #include "gpio.h"
 
@@ -24,6 +25,20 @@ typedef struct{
                          //Example: I2C_EV_INT_ENABLE | I2C_ERR_INT_ENABLE, @ref I2C_INTERRUPT_ENABLE_MODES
                          //to disable an interrupt don't select it as it will be automatically disabled
 }I2C_config_t;
+
+//enums used for sending and receiving
+typedef enum{STOP, NO_STOP} I2C_stop_choice_t;
+typedef enum{NORMAL_START, REP_START} I2C_start_choice_t;
+typedef enum{RESET, SET} I2C_flag_status_t;
+typedef enum{I2C_WRITE, I2C_READ} I2C_rw_t;
+typedef enum
+{I2C_BUSY,
+I2C_START_DONE,
+I2C_ADDR_ACKED,
+I2C_DR_EMPTY,
+I2C_BYTE_SENT,
+I2C_RECV_NOT_EMPTY} I2C_flag_type_t;
+
 
 #define I2C_ENABLE 1UL
 #define I2C_TXE_RXNE_INT_ENABLE (1UL << 10)
@@ -79,5 +94,35 @@ void I2C_deInit(I2C_t* i2c);
 //1) pointer to i2c to be configured
 //Outputs: None
 void I2C_set_GPIO(I2C_t* i2c);
+
+
+//sends data as a master
+//Inputs
+//1) pointer to i2c to be configured
+//2) Address of slave that will receive the data
+//3) Buffer containing the data to be sentW
+//4) Data Length to be sent in bytes
+//5) Choose to generate a stop or not
+//6) Specify if start is repeated start or not
+//Outputs:None
+//Note: Function supports polling mode only right now.
+void I2C_master_send(I2C_t* i2c, uint16_t slaveAddr, uint8_t* dataToSend, uint16_t dataLen, I2C_stop_choice_t stopChoice, I2C_start_choice_t startChoice);
+
+//receive data as a master
+//Inputs
+//1) pointer to i2c to be configured
+//2) Address of slave that will send the data
+//3) The buffer to fill data at
+//4) The length of data to be received
+//5) Choose to generate a stop or not
+//6) Specify if start is repeated start or not
+//Outputs:None
+//Note: Function supports polling mode only right now.
+void I2C_master_recv(I2C_t* i2c, uint16_t slaveAddr, uint8_t* dataRecvBuffer, uint16_t dataLen, I2C_stop_choice_t stopChoice, I2C_start_choice_t startChoice);
+
+
+I2C_flag_status_t I2C_check_flag(I2C_t* i2c, I2C_flag_type_t flagType);
+
+void I2C_send_address(I2C_t* i2c,uint16_t slaveAddr, I2C_rw_t rwChoice);
 
 #endif

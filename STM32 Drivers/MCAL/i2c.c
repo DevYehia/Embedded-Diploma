@@ -5,8 +5,7 @@ I2C_config_t g_I2C2_config;
 
 void I2C_init(I2C_t* i2c, I2C_config_t* conf){
 
-
-
+    //Clock Enable
     if(i2c == I2C1){
         CLK_ENABLE_I2C1();
         g_I2C1_config = *conf;
@@ -31,7 +30,6 @@ void I2C_init(I2C_t* i2c, I2C_config_t* conf){
     }
 
     //NVIC interrupt enable
-
     if(i2c == I2C1){
         if(conf->irq_enable & I2C_EV_INT_ENABLE){
             NVIC_ENABLE_I2C1_EV_IRQ();
@@ -189,4 +187,151 @@ void I2C_set_GPIO(I2C_t* i2c){
         GPIO_init(GPIOB,&conf);
 
     }
+}
+
+I2C_flag_status_t I2C_check_flag(I2C_t* i2c, I2C_flag_type_t flagType){
+    switch(flagType){
+        case I2C_BUSY:
+        {
+            return GET_BIT(i2c->SR2,1);
+        }
+        break;
+        case I2C_START_DONE:
+        {
+            return GET_BIT(i2c->SR1, 0);
+        }
+        break;
+        case I2C_ADDR_ACKED:
+        {
+            return GET_BIT(i2c->SR1, 1);
+        }
+        break;
+        case I2C_DR_EMPTY:
+        {
+            return GET_BIT(i2c->SR1, 7);            
+        }
+        break;
+        case I2C_BYTE_SENT:
+        {
+            return GET_BIT(i2c->SR1, 2);            
+        }
+        break;
+        case I2C_RECV_NOT_EMPTY:
+        {
+            return GET_BIT(i2c->SR1, 6);            
+        }
+        break;                        
+    }
+}
+
+void I2C_send_address(I2C_t* i2c,uint16_t slaveAddr, I2C_rw_t rwChoice){
+    if(i2c == I2C1){
+        if(g_I2C1_config.slave_addr_info->addr_size == I2C_ADDR_7_BITS){
+            slaveAddr = (slaveAddr << 1) | rwChoice;
+            i2c->DR = slaveAddr;
+        }
+        else{
+            //Not Supported
+        }
+    }
+    else{
+        if(g_I2C2_config.slave_addr_info->addr_size == I2C_ADDR_7_BITS){
+            slaveAddr = (slaveAddr << 1) | rwChoice;
+            i2c->DR = slaveAddr;
+        }
+        else{
+            //Not Supported
+        }
+    }
+}
+
+void I2C_master_send(I2C_t* i2c, uint16_t slaveAddr, uint8_t* dataToSend, uint16_t dataLen, I2C_stop_choice_t stopChoice, I2C_start_choice_t startChoice){
+
+    uint16_t dummyRead;
+    if(startChoice == NORMAL_START){ //wait till bus is idle
+        while(GET_BIT(i2c->SR2,1) == 1);
+    }
+
+    //Generate Start Condition
+    SET_BIT(i2c->CR1,8);
+
+    //Wait till Start Condition Generated
+    while(I2C_check_flag(i2c, I2C_START_DONE) == RESET);
+
+    //Clear SB Flag: cleared by reading SR1 register followed by writing DR register with Address.
+    //No Need since check_flag reads SR1
+
+    I2C_send_address(i2c, slaveAddr, I2C_WRITE);
+
+    //Wait till address ACKed
+    //todo: handle NACK
+    while(I2C_check_flag(i2c, I2C_ADDR_ACKED) == RESET);
+
+    //clear ADDR Flag
+    //cleared by reading SR1 register followed by reading SR2.
+    //No need to read SR1 since check_flag reads it
+    dummyRead = i2c->SR2;
+
+    //Send the data
+    for(int i = 0 ; i < dataLen ; i++){
+        i2c->DR = dataToSend[i];
+        //wait till DR Empty
+        while(I2C_check_flag(i2c, I2C_DR_EMPTY) == RESET);
+    }
+
+    if(stopChoice == STOP){
+        SET_BIT(i2c->CR1, 9);
+    }    
+
+}
+
+void I2C_master_recv(I2C_t* i2c, uint16_t slaveAddr, uint8_t* dataRecvBuffer, uint16_t dataLen, I2C_stop_choice_t stopChoice, I2C_start_choice_t startChoice){
+
+    uint16_t dummyRead;
+
+    if(startChoice == NORMAL_START){ //wait till bus is idle
+        while(GET_BIT(i2c->SR2,1) == 1);
+    }
+
+    //Generate Start Condition
+    SET_BIT(i2c->CR1,8);
+
+    //Wait till Start Condition Generated
+    while(I2C_check_flag(i2c, I2C_START_DONE) == RESET);
+
+    //Clear SB Flag: cleared by reading SR1 register followed by writing DR register with Address.
+    //No Need since check_flag reads SR1
+
+    I2C_send_address(i2c, slaveAddr, I2C_READ);
+
+    //Wait till address ACKed
+    //todo: handle NACK
+    while(I2C_check_flag(i2c, I2C_ADDR_ACKED) == RESET);
+
+    //clear ADDR Flag
+    //cleared by reading SR1 register followed by reading SR2.
+    //No need to read SR1 since check_flag reads it
+    dummyRead = i2c->SR2;
+
+    //Receive the data
+    int i = 0;
+    for( ; i < dataLen - 1 ; i++){
+        //wait till there is data to read
+        while(I2C_check_flag(i2c, I2C_RECV_NOT_EMPTY) == RESET);
+
+        dataRecvBuffer[i] = i2c->DR;
+    }
+
+    //For last data byte disable ACK to send NACK
+    //Also Prepare the Stop generation
+    CLR_BIT(i2c->CR1, 10);
+    if(stopChoice == STOP){
+        SET_BIT(i2c->CR1, 9);
+    }        
+    //wait till there is data to read
+    while(I2C_check_flag(i2c, I2C_RECV_NOT_EMPTY) == RESET);
+    dataRecvBuffer[i] = i2c->DR;
+
+    //return ACK to be enabled
+    SET_BIT(i2c->CR1, 10);    
 }
