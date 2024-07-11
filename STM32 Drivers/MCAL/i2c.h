@@ -71,7 +71,7 @@ I2C_RECV_NOT_EMPTY} I2C_flag_type_t;
 #define I2C_GC_DISABLE  (1UL << 6)
 
 //I2C_INTERRUPT_ENABLE_MODES
-#define I2C_NO_INT_ENABLE
+#define I2C_NO_INT_ENABLE   0x0000UL
 #define I2C_EV_INT_ENABLE   (1UL << 9)
 #define I2C_ERR_INT_ENABLE  (1UL << 8)
 
