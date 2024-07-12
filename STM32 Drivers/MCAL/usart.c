@@ -2,17 +2,13 @@
 
 #define getUsartNo(usart)    usart == USART1 ? 1 : \
 							 usart == USART2 ? 2 : \
-							 usart == USART3 ? 3 : \
-							 usart == UART4  ? 4 : \
-							 usart == UART5  ? 5 : -1
+							 usart == USART3 ? 3 : -1
 
 #define getUsartIRQ(usart)   usart == USART1 ? USART1_IRQ : \
 							 usart == USART2 ? USART2_IRQ : \
-							 usart == USART3 ? USART3_IRQ : \
-							 usart == UART4  ? UART4_IRQ : \
-							 usart == UART5  ? UART5_IRQ : -1
+							 usart == USART3 ? USART3_IRQ : -1
 
-void (*USART_callbacks[5]) (void);
+void (*USART_callbacks[3]) (void);
 static uint8_t payload_length = -1;
 static uint8_t isParityEnabled = 0;
 
@@ -211,12 +207,4 @@ void USART2_IRQHandler(){
 
 void USART3_IRQHandler(){ 
 	USART_callbacks[2]();
-}  
-
-void UART4_IRQHandler(){ 
-	USART_callbacks[3]();
-}  
-
-void UART5_IRQHandler(){ 
-	USART_callbacks[4]();
 }  

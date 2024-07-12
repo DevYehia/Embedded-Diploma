@@ -40,8 +40,6 @@
 //APB1 Periphrals
 #define USART2_BASE   0x40004400UL
 #define USART3_BASE   0x40004800UL
-#define UART4_BASE    0x40004C00UL
-#define UART5_BASE    0x40005000UL
 
 #define SPI2_BASE      0x40003800
 
@@ -236,8 +234,6 @@ typedef struct
 #define USART1  ((USART_t *)(USART1_BASE))
 #define USART2  ((USART_t *)(USART2_BASE))
 #define USART3  ((USART_t *)(USART3_BASE))
-#define UART4   ((USART_t *)(UART4_BASE))
-#define UART5   ((USART_t *)(UART5_BASE))
 
 //-*-*-*-*-*-*-*-*-*-*-*-
 //Peripheral Instants: SPI
