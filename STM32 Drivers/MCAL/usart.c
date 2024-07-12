@@ -12,14 +12,14 @@ void (*USART_callbacks[3]) (void);
 static uint8_t payload_length = -1;
 static uint8_t isParityEnabled = 0;
 
-void UART_init(USART_t* usart ,UART_config_t* config){
+void USART_init(USART_t* usart ,USART_config_t* config){
 
 
 	uint8_t usart_no = getUsartNo(usart);
 	ENABLE_USART(usart_no);
 
 
-	//enable the UART
+	//enable the USART
 	SET_BIT(usart->CR1,13);
 
 
@@ -118,7 +118,7 @@ void UART_init(USART_t* usart ,UART_config_t* config){
 
 }
 
-void UART_set_GPIO(USART_t* usart){
+void USART_set_GPIO(USART_t* usart){
     GPIO_config_t conf;
     if(usart == USART1){
         //TX on Pin B6
@@ -159,20 +159,20 @@ void UART_set_GPIO(USART_t* usart){
 
 }
 
-void UART_set_callback(void (*func)(void),USART_t* usart){
+void USART_set_callback(void (*func)(void),USART_t* usart){
     uint8_t usartNo = getUsartNo(usart);
 	USART_callbacks[usartNo-1] = func;
 }
 
 
 
-void UART_send_data(USART_t* usart, uint16_t data, uint8_t poll){
+void USART_send_data(USART_t* usart, uint16_t data, uint8_t poll){
 	if(poll != USART_NO_POLL){
 		while(GET_BIT(usart->SR,7) == 0);
 	}
 	usart->DR = data;
 }
-uint16_t UART_receive_data(USART_t* usart, uint8_t poll){
+uint16_t USART_receive_data(USART_t* usart, uint8_t poll){
 	if(poll != USART_NO_POLL){
 		while(GET_BIT(usart->SR,5) == 0);
 	}	
